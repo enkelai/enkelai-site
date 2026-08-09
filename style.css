@@ -7,6 +7,7 @@
   --link: #0033aa;
   --link-visited: #551a8b;
   --border: #111111;
+  --accent: #037092;
 }
 
 * {
@@ -59,6 +60,10 @@ nav a.site-name {
   margin-right: auto;
 }
 
+.wordmark { font-weight: 700; letter-spacing: -0.01em;
+            text-decoration: none; color: inherit; }
+.wordmark .ai { color: var(--accent); }
+
 nav ul {
   list-style: none;
   display: flex;
@@ -73,7 +78,7 @@ nav ul li {
 }
 
 a {
-  color: var(--link);
+  color: var(--accent);
 }
 
 a:visited {
@@ -89,11 +94,13 @@ h3 {
 h1 {
   font-size: 1.9rem;
   margin-top: 0;
+  color: var(--accent);
 }
 
 h2 {
   font-size: 1.4rem;
   margin-top: 2rem;
+  color: var(--accent);
 }
 
 p {
