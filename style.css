@@ -34,6 +34,10 @@ figure img {
   background: #fff;
 }
 
+strong {
+  font-weight: 600;
+}
+
 div.container.blog ul,
 div.container.blog ol {
   padding-left: 1.2em;
