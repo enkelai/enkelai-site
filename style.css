@@ -33,3 +33,13 @@ nav ul li {
 figure img {
   background: #fff;
 }
+
+div.container.blog ul,
+div.container.blog ol {
+  padding-left: 1.2em;
+}
+
+div.container.blog#first-content {
+  background: linear-gradient(90deg, hsla(298, 68%, 90%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);
+  flex: none;
+}
