@@ -3,6 +3,61 @@
    the Clarity template does not provide (persistent nav) plus the
    plain-text wordmark and a fix for transparent figure backgrounds. */
 
+/* ===================== Färgpalett ===================== */
+/* --petrol-light används enbart till linjer, ramar och hover - aldrig
+   som textfärg (3.08:1 mot vitt räcker inte för brödtext).
+   --terracotta används enbart som bakgrund på call-to-action med vit
+   text - aldrig som textfärg. */
+:root {
+  --petrol-deep: #024A61;
+  --petrol: #037092;
+  --petrol-light: #4A9DBA;
+  --tint: #E4F0F5;
+  --sand: #E8C9A8;
+  --terracotta: #C0562A;
+  --ink: #1A1A1A;
+}
+
+/* Brödtext */
+body {
+  color: var(--ink);
+}
+
+p, ol, ul, li, code, pre, h3, h4, h5, h6 {
+  color: var(--ink);
+}
+
+/* Rubriker */
+h1, h2 {
+  color: var(--petrol-deep);
+}
+
+/* Länkar i brödtext. Nav och sidfot ärver --ink som tidigare. */
+div.container.blog p a,
+div.container.blog li a {
+  color: var(--petrol);
+}
+
+/* Hover markeras med linjen, inte med textfärgen. */
+div.container.blog p a:hover,
+div.container.blog li a:hover {
+  color: var(--petrol);
+  text-decoration-color: var(--petrol-light);
+  text-decoration-thickness: 2px;
+}
+
+::-moz-selection {
+  color: var(--ink);
+  background: var(--sand);
+}
+
+::selection {
+  color: var(--ink);
+  background: var(--sand);
+}
+
+/* ===================== Sidchrome ===================== */
+
 .wordmark {
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -43,10 +98,17 @@ div.container.blog ol {
   padding-left: 1.2em;
 }
 
+/* Figurpanelerna: mallens grå ersatt med paletten. */
+div.container.blog.gray {
+  background-color: var(--tint);
+}
+
 div.container.blog#first-content {
-  background: linear-gradient(90deg, hsla(298, 68%, 90%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);
+  background: linear-gradient(90deg, hsla(198, 46%, 93%, 1) 0%, hsla(31, 58%, 78%, 1) 100%);
   flex: none;
 }
+
+/* ===================== Nyhetsbrevsformulär ===================== */
 
 .newsletter-form {
   display: flex;
@@ -67,14 +129,14 @@ div.container.blog#first-content {
   font-size: 1em;
   padding: 0.6em 0.8em;
   margin-top: 0.4em;
-  border: 1px solid #c6c6c6;
+  border: 1px solid var(--petrol-light);
   border-radius: 6px;
-  color: #353535;
+  color: var(--ink);
   background: #fff;
 }
 
 .newsletter-form input[type="email"]:focus {
-  outline: 2px solid #353535;
+  outline: 2px solid var(--petrol-light);
   outline-offset: 1px;
 }
 
@@ -94,6 +156,21 @@ div.container.blog#first-content {
   margin-top: 0.2em;
 }
 
+/* Call-to-action: terracotta som bakgrund, vit text. */
 .newsletter-form button {
   align-self: flex-start;
+  background-color: var(--terracotta);
+  color: #FFFFFF;
+}
+
+.newsletter-form button:hover {
+  background-color: var(--terracotta);
+  color: #FFFFFF;
+  opacity: 0.85;
+}
+
+.newsletter-form button:active {
+  background-color: var(--terracotta);
+  color: #FFFFFF;
+  opacity: 0.7;
 }
