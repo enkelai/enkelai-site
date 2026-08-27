@@ -220,3 +220,18 @@ div.container.blog .byline p.text {
     height: 80px;
   }
 }
+
+/* ===================== Active-state i toppmenyn ===================== */
+/* Markeringen hängs på <body>, inte på menyvalet, så att <header>-blocket
+   förblir byte-identiskt på samtliga sidor. Bara understrykningen och
+   textfärgen ändras - inga mått - så mobillayouten är oförändrad.
+   404 och /integritet/ saknar klass: inget menyval motsvarar dem. */
+
+body.nav-hem nav ul a[href="/"],
+body.nav-artiklar nav ul a[href="/artiklar/"],
+body.nav-organisationer nav ul a[href="/for-organisationer/"],
+body.nav-nyhetsbrev nav ul a[href="/nyhetsbrev/"] {
+  color: var(--petrol-deep);
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--petrol-light);
+}
