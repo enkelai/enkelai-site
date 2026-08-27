@@ -174,3 +174,49 @@ div.container.blog#first-content {
   color: #FFFFFF;
   opacity: 0.7;
 }
+
+/* ===================== Byline ===================== */
+/* Raden under heron på / och /for-organisationer/. Selektorerna är
+   scopade under div.container.blog för att gå före mallens
+   div.container.blog img respektive div.container.blog p.text. */
+
+.byline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+div.container.blog .byline img {
+  flex: 0 0 auto;
+  width: 120px;
+  height: 120px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.byline > div {
+  min-width: 0;
+}
+
+div.container.blog .byline p.text {
+  padding: 0;
+}
+
+/* Mindre bild på smala skärmar - men kvar bredvid texten, ingen radbrytning. */
+@media screen and (max-width: 600px) {
+  .byline {
+    gap: 1rem;
+  }
+
+  div.container.blog .byline img {
+    width: 80px;
+    height: 80px;
+  }
+}
