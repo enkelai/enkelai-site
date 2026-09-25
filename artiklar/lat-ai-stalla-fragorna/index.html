@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Låt AI ställa frågorna — ett enkelt sätt att skriva bättre promptar | enkelAI</title>
+<meta name="description" content="Låt AI-modellen intervjua dig innan den svarar och skriva prompten åt dig – med en färdig prompt att spara och använda igen.">
+<link rel="canonical" href="https://enkelai.net/artiklar/lat-ai-stalla-fragorna/">
+<meta property="og:title" content="Låt AI ställa frågorna — ett enkelt sätt att skriva bättre promptar">
+<meta property="og:description" content="Låt AI-modellen intervjua dig innan den svarar och skriva prompten åt dig – med en färdig prompt att spara och använda igen.">
+<meta property="og:url" content="https://enkelai.net/artiklar/lat-ai-stalla-fragorna/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:image" content="https://enkelai.net/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="enkelAI — AI i arbetslivet. Konkret, på svenska, utan hype.">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512.png">
+<link rel="apple-touch-icon" href="/images/favicon-512.png">
+<meta name="theme-color" content="#024A61">
+<link rel="stylesheet" href="/assets/stylesheets/main_free.css">
+<link rel="stylesheet" href="/style.css">
+<style>
+/* Sidspecifik stil för promptblocket och OBS-rutan. Artikel 1 saknar
+   mönster för dessa två element, så stilen läggs bara här, inte i
+   delade stilmallar (style.css / main_free.css). */
+.prompt-block {
+  margin: 1.5vh 0;
+  padding: 1.2em 1.4em;
+  border: 1px solid var(--petrol-light);
+  border-left: 4px solid var(--petrol);
+  border-radius: 6px;
+  background-color: var(--tint);
+}
+.prompt-block .prompt-block-label {
+  margin: 0 0 0.8em 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.8em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--petrol-deep);
+}
+.prompt-block .prompt-block-text {
+  margin: 0 0 0.8em 0;
+  padding: 0;
+  font-family: "Charter", sans-serif;
+  color: var(--ink);
+}
+.prompt-block .prompt-block-text:last-child {
+  margin-bottom: 0;
+}
+.obs-box {
+  margin: 1.5vh 0;
+  padding: 1.2em 1.4em;
+  border: 1px solid var(--sand);
+  border-left: 4px solid var(--terracotta);
+  border-radius: 6px;
+  background-color: var(--tint);
+}
+.obs-box p.text {
+  margin: 0;
+  padding: 0;
+}
+</style>
+</head>
+<body class="nav-artiklar">
+<header>
+<div class="container">
+<nav>
+<a class="wordmark" href="/">enkelAI</a>
+<ul>
+<li><a href="/">Hem</a></li>
+<li><a href="/artiklar/">Artiklar</a></li>
+<li><a href="/for-organisationer/">För organisationer</a></li>
+<li><a href="/nyhetsbrev/">Nyhetsbrev</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="container blog" id="first-content">
+    <div class="blog-title no-cover">
+        <div class="blog-intro">
+            <div>
+                <h1 class="title">Låt AI ställa frågorna — ett enkelt sätt att skriva bättre promptar</h1>
+                <p class="abstract"><em>TL;DR: Hur du låter AI-modellen intervjua dig innan den svarar, och får den att själv skriva egna promptar åt dig. Samt en färdig prompt som du kan spara och använda igen.</em></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<article>
+
+<div class="container blog main first">
+<p class="text">Ibland när man arbetar med AI kan man efter ett tag känna att diskussionen drar iväg åt fel håll; förslagen blir sämre, och en känsla uppstår att din AI-modell inte riktigt fattat vad det är du vill ha hjälp med. Inte nödvändigtvis att den har fel, bara att den inte riktigt förstår problemet.</p>
+
+<p class="text"><a href="/artiklar/ai-ar-ingen-sokmotor/">En tidigare artikel</a> handlade om att AI-modeller inte fungerar på samma sätt som en sökmotor. Kortfattat innebär detta att kontext är viktigare än nyckelord. För bättre och mer användbara svar behöver AI-modellen veta varför du ber om det du gör, vem svaret är till för och vad du redan vet. Risken är annars att den själv fyller i luckorna med generella antaganden och killgissningar.</p>
+
+<p class="text">Problemet är såklart att rådet är lättare sagt än gjort. Det är lätt att veta <em>att</em> AI behöver kontext; frågan kvarstår dock <em>vilken</em> kontext som är viktigast. Alltså: <em>Hur ska man på förhand kunna veta vilka detaljer som spelar roll när du skriver prompten?</em> Ett sätt är att utgå från alla de guider och ramverk som finns om hur man skriver en bra prompt. Dessa vägledningar ger dig kloka råd men kräver att du lägger ner en hel del arbete på att sätta dig in i materialet. Ett annat, enligt mig mer effektivt, sätt är att be AI-modellen själv att säga vad den behöver veta.</p>
+</div>
+
+<div class="container blog main">
+<h2>TIPS: Be AI-modellen om att hjälpa dig att ställa rätt fråga</h2>
+
+<p class="text">I den <a href="/artiklar/ai-ar-ingen-sokmotor/">tidigare artikelns</a> sista exempel (prompt 3) bad vi AI-modellen att ställa frågorna en i taget innan den svarade. Samma knep går att använda ett steg tidigare. Istället för att be AI lösa själva uppgiften kan du först be den att hjälpa dig att skriva prompten. På så sätt kan du försäkra dig om att den har förstått och kan beskriva uppgiften korrekt, innan ni arbetar vidare. Det är lite som när du ber en erfaren kollega om hjälp; det första du får är en motfråga om vad du egentligen är ute efter. Skillnaden mot en kollega är att hon ofta implicit förstår vad det är du är ute efter (eftersom hon är människa och ni jobbar på samma arbetsplats); en AI-modell måste du istället själv uppmana till att kontrollera underförstådd information och antaganden.</p>
+
+<p class="text">Genom att be AI-modellen att själv skriva sin prompt (i dialog med dig) får du i praktiken två saker: ett bättre svar, och en färdig prompt som du kan spara och använda nästa gång en liknande uppgift dyker upp.</p>
+
+<h3>Så här gör du i praktiken</h3>
+
+<p class="text">Nedan är en enkel prompt att klistra in i en ny chatt med valfri AI-modell. Instruktionerna är medvetet generella och fungerar lika bra oavsett om du i förlängningen vill ha hjälp med att skriva en text, sammanfatta ett dokument eller någon annan uppgift.</p>
+
+<div class="prompt-block">
+<p class="prompt-block-label">PROMPT-TEXT ATT KOPIERA TILL DIN EGEN AI-CHAT</p>
+<p class="prompt-block-text">Jag vill ha hjälp att skriva en prompt till en AI-modell. Lös inte själva uppgiften, hjälp mig bara att formulera den.</p>
+<p class="prompt-block-text">1. Fråga mig först vad jag vill åstadkomma.<br>
+2. Ställ sedan frågor om det du behöver veta, till exempel vem resultatet är till för, vilken roll eller expertis AI-modellen ska ha, vad jag redan vet, om jag har ett exempel på hur det ska se ut, vilken form svaret ska ha och vad som inte får bli fel. Ställ en fråga i taget, högst fem frågor, och ge gärna exempel på svar så att det blir lättare för mig att svara.<br>
+3. Säg till om uppgiften är för stor för en enda prompt, och föreslå i så fall hur den kan delas upp.<br>
+4. När du vet tillräckligt, eller när jag skriver "klar": skriv en färdig prompt på svenska som jag kan klistra in i en ny chatt. Den nya chatten vet ingenting om vårt samtal, så prompten måste innehålla allt som behövs. Sätt det du själv har antagit inom hakparentes så att jag kan rätta det, och skriv prompten i en egen kodruta så att den går att kopiera med ett klick.<br>
+5. Avsluta med att säga vad jag bör kontrollera extra noga i svaret jag sedan får.</p>
+<p class="prompt-block-text">Om jag skriver in personuppgifter eller sekretessbelagd information, påminn mig om att beskriva situationen i stället.</p>
+</div>
+
+<p class="text">Notera att frågorna ovan täcker det som brukar kallas roll, kontext, format och begränsningar, men du behöver inte kunna komma ihåg dem i huvudet. Istället blir det promptens jobb, att i dialog med dig ta reda på vad du vill åstadkomma. Kom också ihåg att du alltid kan säga åt din AI-modell att den nu får sluta fråga mer saker och istället ge dig ett svar. I vårt fall kan du exempelvis göra detta genom att helt enkelt skriva "klar" (se punkt 4 i prompten). Glöm heller inte att det som står inom hakparentes i den färdiga prompten är information som AI-modellen har antagit, så rätta det innan du använder prompten.</p>
+</div>
+
+<div class="container blog main gray">
+<figure id="figur-1">
+<img src="/images/lat-ai-stalla-fragorna-figur-1-793.png" alt="Hur det kan se ut när du kör prompt-förslaget i gratisversionen av ChatGPT." loading="lazy">
+<p class="caption">Figur 1. Hur det kan se ut när du kör prompt-förslaget i gratisversionen av ChatGPT. Notera att vi inte får något förslag på prompt, utan istället en första fråga om vad vi faktiskt vill ha hjälp med.</p>
+</figure>
+</div>
+
+<div class="container blog main">
+<h3>Testa nu själv på en riktig uppgift</h3>
+
+<p class="text">Det hjälper inte att bara läsa den här artikeln om du vill bli bättre på att arbeta med AI, du måste också testa det i praktiken. Följ därför de här stegen nu direkt:</p>
+
+<ol>
+<li><p class="text">Välj något du faktiskt ska göra den här veckan, exempelvis ett mejl som ska skrivas, ett möte som ska förberedas eller en presentation som ska planeras.</p></li>
+<li><p class="text">Logga in på ditt AI-verktyg. Har du inte tillgång till något kan du alltid använda gratisversionen av <a href="https://chatgpt.com/" rel="noopener">ChatGPT</a> eller <a href="https://claude.ai/" rel="noopener">Claude</a>.</p></li>
+<li><p class="text">Kopiera nu prompten ovan och klistra in texten i en ny chat i det AI-verktyg du arbetar i.</p></li>
+<li><p class="text">Klicka på “skicka” och svara på frågorna du får tillbaka.</p></li>
+<li><p class="text">När modellen anser att svaren är tillräckliga (eller när du själv har tröttnat och skrivit “klar”) kommer den skicka ett förslag på en ny prompt till dig, anpassad efter uppgiften som du beskrivit.</p></li>
+<li><p class="text">Läs igenom förslaget och dubbelkolla att AI-modellen verkar ha förstått din uppgift. Om inte, be om korrigeringar och en ny version i samma chat.</p></li>
+<li><p class="text">När du känner dig nöjd med resultatet, öppnar du en ny chatt och klistrar in prompt-förslaget där.</p></li>
+<li><p class="text">Klicka på “skicka” och arbeta vidare med den uppgiften som du ursprungligen ville ha hjälp med.</p></li>
+<li><p class="text">Glöm inte att spara din nya prompt om den visar sig användbar, och uppgiften är något som du gör återkommande. På så sätt kan du använda den även nästa gång.</p></li>
+</ol>
+
+<p class="text"><em>(Överkurs: Öppna en ny chat och jämför ditt svar med vad du hade fått om du bara hade ställt frågan rakt ut från början)</em></p>
+
+<div class="obs-box">
+<p class="text"><strong>OBS!</strong> En viktig sak innan du börjar: skriv aldrig in personuppgifter eller sekretessbelagd information i en AI-tjänst som din arbetsgivare inte har godkänt. Beskriv hellre situationen än att klistra in själva materialet.</p>
+</div>
+
+<p class="text">Figur 2 visar ett exempel på hur ett resultat kan se ut efter att man arbetat igenom frågorna som AI-modellen ställde. I detta fall var det övergripande temat “hjälp mig ta fram en prompt för att komma på idéer om arbetsprocesser för AI-användning på svenska arbetsplatser”. Notera att förslaget är betydligt längre, och bättre strukturerat, än om man bara hade skrivit ursprungsfrågan som en fristående prompt.</p>
+</div>
+
+<div class="container blog main gray">
+<figure id="figur-2">
+<img src="/images/lat-ai-stalla-fragorna-figur-2-508.png" alt="Det resulterande promptförslaget från gratisversionen av ChatGPT." loading="lazy">
+<p class="caption">Figur 2. Det resulterande promptförslaget från gratisversionen av ChatGPT, efter att ha svarat på 5 frågor på temat <em>“Komma på idéer om arbetsprocesser för AI-användning på svenska arbetsplatser”</em>.</p>
+</figure>
+</div>
+
+<div class="container blog main">
+<h2>Kom ihåg att en bättre prompt inte ger ett mer sant svar</h2>
+
+<p class="text">En bättre prompt ger ett mer användbart svar, men inte nödvändigtvis ett mer sant svar. Glöm inte att AI-modellen låter lika säker när den har fel som när den har rätt, oavsett hur bra frågan var. Det är därför viktigt att du alltid granskar det som är viktigt, dvs. siffror, namn och källor innan du använder svaret till något som betyder något.</p>
+
+<p class="text">Det är också lätt att tro att en bättre prompt gör att AI-modellen tänker åt dig. Så är det inte. Frågorna som du får om du använder ovanstående prompt fungerar bara om du faktiskt svarar på dem, och ibland är det just i dina egna svar som du märker vad du själv inte hade tänkt igenom.</p>
+
+<p class="text">Glöm heller inte att frågorna som prompten genererar troligtvis tar några minuter att besvara. För snabba AI-frågor innebär det att arbetsprocessen kostar mer än vad det smakar. Många gånger kan det räcka gott med att du bara skriver en fråga direkt, men med lite mer kontext än vad du brukar. Att få stöttning med att specificera en prompt ger störst nytta när uppgiften är viktig, när du inte riktigt vet var du ska börja eller när samma typ av uppgift kommer tillbaka.</p>
+
+<p class="text">Har du frågor eller invändningar? Mejla mig gärna. Fler artiklar publiceras efterhand.</p>
+
+<p class="text">Lycka till!</p>
+</div>
+
+</article>
+
+<div class="container blog main">
+<p class="text"><a href="/for-organisationer/">För organisationer</a></p>
+<p class="text"><a href="mailto:erik@enkelai.net">erik@enkelai.net</a></p>
+</div>
+
+<div class="container blog main">
+<h2>Nya artiklar direkt i inkorgen</h2>
+<p class="text">Jag skickar ett mejl när jag publicerar en ny artikel om AI i arbetslivet. Inget annat, ingen reklam.</p>
+
+<form class="newsletter-form" method="POST" action="https://c1894ea2.sibforms.com/v2/serve/MUIFAGZoIHXhNKqsJBTTOz7udWKTIJgBbd2zYsJN2guOXLlIvyFusT9XPiFs08dojuQsaE7mum7J4Nirzxye4t0_X0frl7nH0iMC5zg0SnDr_ff1WjKQtMm6BL-4nfEwhowXjivtlizvQusM98EuoeN_anDALyAy2-qzWCQ8vuXVg-tpWAsZLKsHt3qDzopOOTRiM1xzSuQ9c19lVQ==">
+<label for="EMAIL">Din e-postadress</label>
+<input type="email" id="EMAIL" name="EMAIL" required placeholder="din@epost.se" autocomplete="email">
+<label class="checkbox-label">
+<input type="checkbox" name="OPT_IN" value="1" required>
+<span>Ja, skicka mig ett mejl när nya artiklar publiceras. Jag har läst <a href="/integritet/">integritetspolicyn</a>.</span>
+</label>
+<input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off">
+<input type="hidden" name="locale" value="sv">
+<button type="submit">Prenumerera</button>
+</form>
+</div>
+
+<footer>
+<div class="container">
+<p>© 2026 Erik Klint</p>
+<p><a href="mailto:erik@enkelai.net">erik@enkelai.net</a></p>
+<p><a href="/nyhetsbrev/">Få nya artiklar via mejl</a></p>
+<p><a href="/integritet/">Integritet</a></p>
+<p>Byggd med <a href="https://shikun.io/projects/clarity">Clarity Template</a>.</p>
+</div>
+</footer>
+</body>
+</html>
