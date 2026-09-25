@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Därför verkar AI glömma det ni redan pratat om | enkelAI</title>
+<meta name="description" content="Varför AI-modellen tappar det ni pratat om när chatten växer, varför du bör byta chatt ofta och en prompt för att ta med det viktiga.">
+<link rel="canonical" href="https://enkelai.net/artiklar/darfor-verkar-ai-glomma/">
+<meta property="og:title" content="Därför verkar AI glömma det ni redan pratat om">
+<meta property="og:description" content="Varför AI-modellen tappar det ni pratat om när chatten växer, varför du bör byta chatt ofta och en prompt för att ta med det viktiga.">
+<meta property="og:url" content="https://enkelai.net/artiklar/darfor-verkar-ai-glomma/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:image" content="https://enkelai.net/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="enkelAI — AI i arbetslivet. Konkret, på svenska, utan hype.">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512.png">
+<link rel="apple-touch-icon" href="/images/favicon-512.png">
+<meta name="theme-color" content="#024A61">
+<link rel="stylesheet" href="/assets/stylesheets/main_free.css">
+<link rel="stylesheet" href="/style.css">
+<style>
+/* Sidspecifik stil för promptblocket, samma mönster som artikel 2
+   (lat-ai-stalla-fragorna). Läggs bara här, inte i delade stilmallar. */
+.prompt-block {
+  margin: 1.5vh 0;
+  padding: 1.2em 1.4em;
+  border: 1px solid var(--petrol-light);
+  border-left: 4px solid var(--petrol);
+  border-radius: 6px;
+  background-color: var(--tint);
+}
+.prompt-block .prompt-block-label {
+  margin: 0 0 0.8em 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.8em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--petrol-deep);
+}
+.prompt-block .prompt-block-text {
+  margin: 0 0 0.8em 0;
+  padding: 0;
+  font-family: "Charter", sans-serif;
+  color: var(--ink);
+}
+.prompt-block .prompt-block-text:last-child {
+  margin-bottom: 0;
+}
+</style>
+</head>
+<body class="nav-artiklar">
+<header>
+<div class="container">
+<nav>
+<a class="wordmark" href="/">enkelAI</a>
+<ul>
+<li><a href="/">Hem</a></li>
+<li><a href="/artiklar/">Artiklar</a></li>
+<li><a href="/for-organisationer/">För organisationer</a></li>
+<li><a href="/nyhetsbrev/">Nyhetsbrev</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="container blog" id="first-content">
+    <div class="blog-title no-cover">
+        <div class="blog-intro">
+            <div>
+                <h1 class="title">Därför verkar AI glömma det ni redan pratat om</h1>
+                <p class="abstract"><em>TL;DR AI-modeller tappar det ni pratat om tidigare i en chatt i takt med att chatten växer i längd. Varför det är viktigt att byta chatt ofta och en process (inkl. prompt) för hur du tar med det viktiga.</em></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<article>
+
+<div class="container blog main first">
+<p class="text">Känns det ibland som att du måste återupprepa dig när du chattar med din AI-modell? Att den helt plötsligt glömt av vad ni redan beslutat tidigare i ert samtal, eller att den helt plötsligt börjar göra saker på ett annat sätt som inte alls stämmer? Ett vanligt missförstånd är att vi tror att chatten är en permanent fil, bara för att vi själva kan läsa texten som vi skrev igår eller för någon vecka sedan. Vi tror helt enkelt att en AI-chat fungerar som en “vanlig” fil på datorn, där den sparade informationen är permanent och laddas varje gång vi öppnar filen. Så är det inte.</p>
+
+<p class="text">Låt oss ta ett exempel. När du öppnar ett Word-dokument läses hela texten in så fort filen öppnas. All text som står där, alla bilder, all formatering, alla tabeller etc. finns tillgängliga direkt; oavsett om det står på sidan ett eller sidan fyrtio. När du ändrar i dokumentet, sparar, och därefter öppnar igen, har den bakomliggande strukturen uppdaterats (alltså fil-datan som finns lagrad på hårddisken). Ändringarna finns kvar.</p>
+
+<p class="text">Men en AI-chatt är inte ett dokument. En chat är en interaktion, och det modellen vet om ert samtal finns inte kvar när du tagit en längre paus. Det luriga är att detta inte är lika synligt eftersom vi själva kan läsa meddelandena i chatten och därmed antar att vår AI-modell gör detsamma. För att undvika missförstånd behöver du istället tänka att din chatt är precis som vilket annat samtal som helst med en kollega. Ni kommer båda troligtvis ihåg vad ni pratade om förra veckan, men sällan detaljer eller specifika antaganden om dessa inte skrivits ned; det är orimligt att anta att din kollega ordagrant kan återge er diskussion och vad ni bestämde.</p>
+</div>
+
+<div class="container blog main">
+<h2>AI-modellen läser om samtalet varje gång</h2>
+
+<p class="text">Varje gång du skickar ett meddelande skickas konversationen till AI-modellen på nytt. Det modellen har att gå på är det som skickas med, plus det den har tränats på. Lite som en kollega som inte minns något av era tidigare möten, utan läser igenom anteckningarna från början varje gång innan svaret.</p>
+
+<p class="text">Så länge chat-konversationen är kort fungerar det bra. Problemet är att det finns en gräns för hur mycket som får plats. När diskussionen blir lång får inte allt plats längre, och då tas det äldsta bort eller ersätts av en sammanfattning. Detaljer som sades för länge sedan kan hamna i skymundan. Kommer du tillbaka till en chat efter några dagar är det dessutom inte säkert att det är samma modell som svarar. Hur mycket information som försvinner (och hur sammanfattnings-processen ser ut) skiljer sig mellan tjänster (inklusive om du byter modell mitt i konversationen), men det kritiska är att det sällan syns. Det vill säga texten i chatten står kvar på skärmen, men modellen har inte längre informationen framför sig. Frågan är alltså hur vi kan försäkra oss om att inte tappa information när vi arbetar med AI-modellerna, då chatten inte beter sig som en vanlig datafil?</p>
+
+<p class="text">Ovanstående fråga förvärras av att om du byter chatt börjar konversationen om från början. Visst, vissa tjänster har en minnesfunktion som tar med utvalda saker från tidigare chattar, men det är ett urval, inte hela konversationen. Och allt du inte tar med dig själv kommer modellen gissa sig till, precis som vi såg i <a href="/artiklar/ai-ar-ingen-sokmotor/">AI är ingen sökmotor</a>, vilket tar oss tillbaka på ruta 1.</p>
+</div>
+
+<div class="container blog main">
+<h2>TIPS: Byt chatt ofta för att inte mista information</h2>
+
+<p class="text">Det låter kanske motsägelsefullt efter det jag just skrev, men eftersom chatten inte är en datafil utan en interaktion, är det viktigt att byta chatt då och då även när inget har gått fel. Långa chattar försämras, och en chatt som inte har använts på länge kan bete sig annorlunda än när du lämnade den.</p>
+
+<p class="text">Att byta chatt tvingar dig att destillera signalen ur bruset. Vad har du och din AI-modell faktiskt kommit fram till, och vilka förutsättningar gäller nu? När du tvingar din modell att skriva ner det i en överlämning får du kontroll både över det som produceras och över förutsättningarna som modellen arbetar utifrån.</p>
+
+<p class="text">I tidigare artiklar skrev jag att du inte ska byta chatt bara för att du inte fick det svar du förväntade dig. Det gäller fortfarande. Skillnaden är skälet: byt inte för att komma undan ett dåligt svar, byt för att fortsätta arbeta utifrån rätt förutsättningar. Att fortsätta arbetet i en ny chat är AI-modellens motsvarighet till att klicka på “spara som” i Word.</p>
+</div>
+
+<div class="container blog main">
+<h2>Så här gör du i praktiken</h2>
+
+<p class="text">Det är frestande att bara kopiera hela chatten, ord för ord, och klistra in den i en ny interaktion. Detta är både opraktiskt och riskfyllt eftersom du inte har kontroll över hur den gamla informationen kommer att tolkas i den nya chatten. Nyckeln är att uttryckligen bara ta med det som är viktigt. Så här ser processen ut:</p>
+
+<ol>
+<li><p class="text"><strong>Skapa ett överlämningsdokument.</strong> Be AI-modellen sammanfatta det ni har kommit fram till innan du lämnar den gamla chatten. Be den att detaljerat och systematiskt gå igenom vad ni kommit fram till, vad som är gjort, och vad som kvarstår. Be den också att räkna upp vilka filer som ska bifogas och att avsluta med en instruktion till den nya chatten. Prompten under “Testa själv” nedan gör just detta.</p></li>
+<li><p class="text"><strong>Läs igenom överlämnings-dokumentet</strong> och dubbelkolla att det inte saknas något viktigt. Be om revideringar eller ändra själv i texten om det behövs.</p></li>
+<li><p class="text"><strong>Starta en ny chat</strong></p></li>
+<li><p class="text"><strong>Klistra in överlämningen och ladda upp eventuella datafiler.</strong></p></li>
+<li><p class="text"><strong>Fortsätt arbeta som vanligt i den nya chatten.</strong></p></li>
+</ol>
+</div>
+
+<div class="container blog main">
+<h2>Testa själv</h2>
+
+<p class="text">Ta en lång chatt du har haft med en AI-modell och fråga om en detalj du gav i början, till exempel ett namn, en siffra eller en förutsättning. Fick du rätt svar? Hur det går beror på vilken tjänst och modell du använder.</p>
+
+<p class="text">Var kvar i chatten och använd nu istället den här överlämningsprompten:</p>
+
+<div class="prompt-block">
+<p class="prompt-block-label">Prompt för överlämning:</p>
+<p class="prompt-block-text">Sammanfatta det vi har kommit fram till i den här chatten som en överlämning, så att jag kan fortsätta i en ny.<br>
+1. Ta med vad uppgiften är, vad som är gjort, vad vi har bestämt och varför, vilka förutsättningar som gäller och vad som fortfarande är öppet.<br>
+2. Skilj på det jag har bestämt, det du har föreslagit som jag inte har tagit ställning till, och det vi har valt bort.<br>
+3. Har vi arbetat fram en text, ta med den senaste versionen ordagrant.<br>
+4. Räkna upp de filer jag behöver bifoga i den nya chatten.<br>
+5. Den nya chatten vet ingenting om vårt samtal, så överlämningen måste innehålla allt som behövs. Sätt det du själv har antagit inom hakparentes så att jag kan rätta det.<br>
+6. Avsluta med en instruktion till den nya chatten: läs överlämningen, säg kort vad du har förstått och fråga om det som är oklart innan vi fortsätter.<br>
+Skriv bara överlämningen, utan inledning eller avslutning, så att jag kan kopiera hela svaret och klistra in det först i en ny chatt.</p>
+</div>
+
+<p class="text">Efter att du fått svaret: öppna en ny chat, klistra in svaret och ladda upp de filer som överlämningen räknar upp.</p>
+
+<p class="text">Två saker att tänka på. Sammanfattningen är också ett AI-svar, så läs igenom den innan du använder den. Saknas något du vet är viktigt lägger du till det själv. Och gör överlämningen i tid. Modellen kan bara sammanfatta det den fortfarande har framför sig, så i en mycket lång chatt kan det viktigaste från början redan vara borta. En bra vana är att göra en överlämning i samband med att du avslutar ditt arbete, exempelvis om du ska gå på lunch eller sluta jobba för dagen. Lite som att spara ditt dokument innan du stänger ned datorn. Figur 1 visar hur en överlämning kan se ut när du använder ovanstående prompt för en längre chat.</p>
+</div>
+
+<div class="container blog main gray">
+<figure id="figur-1">
+<img src="/images/darfor-verkar-ai-glomma-figur-1-585.png" alt="En skärmdump av hur inledningen på en överlämning kan se ut i Claude." loading="lazy">
+<p class="caption">Figur 1. En skärmdump av hur inledningen på en överlämning kan se ut i Claude. Detta exempel bygger på författarens egen chatt om att strukturera lekar och övningar som handbollstränare.</p>
+</figure>
+</div>
+
+<div class="container blog main">
+<p class="text">Förhoppningsvis gör det här det lite lättare att förstå varför AI ibland verkar ha glömt det ni just har pratat om, och vad du kan göra åt det. I nästa artikel skriver jag om en annan sak som påverkar svaren utan att det alltid syns, nämligen vilken AI-modell som faktiskt svarar.</p>
+
+<p class="text">Har du frågor eller invändningar? Mejla mig gärna. Fler artiklar publiceras efterhand.</p>
+
+<p class="text">Lycka till!</p>
+</div>
+
+</article>
+
+<div class="container blog main">
+<p class="text"><a href="/for-organisationer/">För organisationer</a></p>
+<p class="text"><a href="mailto:erik@enkelai.net">erik@enkelai.net</a></p>
+</div>
+
+<div class="container blog main">
+<h2>Nya artiklar direkt i inkorgen</h2>
+<p class="text">Jag skickar ett mejl när jag publicerar en ny artikel om AI i arbetslivet. Inget annat, ingen reklam.</p>
+
+<form class="newsletter-form" method="POST" action="https://c1894ea2.sibforms.com/v2/serve/MUIFAGZoIHXhNKqsJBTTOz7udWKTIJgBbd2zYsJN2guOXLlIvyFusT9XPiFs08dojuQsaE7mum7J4Nirzxye4t0_X0frl7nH0iMC5zg0SnDr_ff1WjKQtMm6BL-4nfEwhowXjivtlizvQusM98EuoeN_anDALyAy2-qzWCQ8vuXVg-tpWAsZLKsHt3qDzopOOTRiM1xzSuQ9c19lVQ==">
+<label for="EMAIL">Din e-postadress</label>
+<input type="email" id="EMAIL" name="EMAIL" required placeholder="din@epost.se" autocomplete="email">
+<label class="checkbox-label">
+<input type="checkbox" name="OPT_IN" value="1" required>
+<span>Ja, skicka mig ett mejl när nya artiklar publiceras. Jag har läst <a href="/integritet/">integritetspolicyn</a>.</span>
+</label>
+<input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off">
+<input type="hidden" name="locale" value="sv">
+<button type="submit">Prenumerera</button>
+</form>
+</div>
+
+<footer>
+<div class="container">
+<p>© 2026 Erik Klint</p>
+<p><a href="mailto:erik@enkelai.net">erik@enkelai.net</a></p>
+<p><a href="/nyhetsbrev/">Få nya artiklar via mejl</a></p>
+<p><a href="/integritet/">Integritet</a></p>
+<p>Byggd med <a href="https://shikun.io/projects/clarity">Clarity Template</a>.</p>
+</div>
+</footer>
+</body>
+</html>
