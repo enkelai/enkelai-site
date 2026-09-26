@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Granska AI-modellens svar som om det vore din kollegas arbete | enkelAI</title>
+<meta name="description" content="Fyra frågor du antagligen redan ställer när du granskar en kollegas arbete, och hur du använder dem på AI-modellens svar.">
+<link rel="canonical" href="https://enkelai.net/artiklar/granska-ai-som-en-kollegas-arbete/">
+<meta property="og:title" content="Granska AI-modellens svar som om det vore din kollegas arbete">
+<meta property="og:description" content="Fyra frågor du antagligen redan ställer när du granskar en kollegas arbete, och hur du använder dem på AI-modellens svar.">
+<meta property="og:url" content="https://enkelai.net/artiklar/granska-ai-som-en-kollegas-arbete/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:image" content="https://enkelai.net/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="enkelAI — AI i arbetslivet. Konkret, på svenska, utan hype.">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512.png">
+<link rel="apple-touch-icon" href="/images/favicon-512.png">
+<meta name="theme-color" content="#024A61">
+<link rel="stylesheet" href="/assets/stylesheets/main_free.css">
+<link rel="stylesheet" href="/style.css">
+<style>
+/* Sidspecifik stil för promptblocket, samma mönster som artikel 2 och 3
+   (lat-ai-stalla-fragorna, darfor-verkar-ai-glomma). Läggs bara här, inte i
+   delade stilmallar. */
+.prompt-block {
+  margin: 1.5vh 0;
+  padding: 1.2em 1.4em;
+  border: 1px solid var(--petrol-light);
+  border-left: 4px solid var(--petrol);
+  border-radius: 6px;
+  background-color: var(--tint);
+}
+.prompt-block .prompt-block-label {
+  margin: 0 0 0.8em 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.8em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--petrol-deep);
+}
+.prompt-block .prompt-block-text {
+  margin: 0 0 0.8em 0;
+  padding: 0;
+  font-family: "Charter", sans-serif;
+  color: var(--ink);
+}
+.prompt-block .prompt-block-text:last-child {
+  margin-bottom: 0;
+}
+</style>
+</head>
+<body class="nav-artiklar">
+<header>
+<div class="container">
+<nav>
+<a class="wordmark" href="/">enkelAI</a>
+<ul>
+<li><a href="/">Hem</a></li>
+<li><a href="/artiklar/">Artiklar</a></li>
+<li><a href="/for-organisationer/">För organisationer</a></li>
+<li><a href="/nyhetsbrev/">Nyhetsbrev</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="container blog" id="first-content">
+    <div class="blog-title no-cover">
+        <div class="blog-intro">
+            <div>
+                <h1 class="title">Granska AI-modellens svar som om det vore din kollegas arbete</h1>
+                <p class="abstract"><em>TL;DR: Fyra frågor du antagligen redan ställer när du granskar en kollegas arbete, och hur du använder dem på AI-modellens svar.</em></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<article>
+
+<div class="container blog main first">
+<p class="text">Det tar inte lång tid när man pratar om AI-användning innan någon påpekar hur viktigt det är att alltid granska svaren. Men hur gör man det i praktiken? Magkänsla? Kontrollera varje mening i varje svar? Min gissning är att du redan vet hur du ska göra, speciellt om du någon gång har granskat en kollegas arbete eller fått ditt eget granskat. Det vill säga: vanan och kunskapen finns, den har bara aldrig riktats mot AI.</p>
+</div>
+
+<div class="container blog main">
+<h2>Granska AI-modellen på samma sätt som en kollega</h2>
+
+<p class="text">När jag granskar en kollegas eller en nyanställds arbete börjar jag ofta med att ställa mig fyra frågor:</p>
+
+<ol>
+<li><p class="text"><strong>Är slutsatsen rimlig och förväntad?</strong> Alltså, stämmer den med det du själv hade gissat eller rentav vet? En slutsats som förvånar kan självklart vara en ny insikt, men den kan också vittna om att resonemanget blivit fel längs med vägen. Båda två anledningarna är skäl att titta närmare på delar av arbetet. När du arbetar med en AI-modell finns dessutom en till fälla (Källa: <a href="https://www.anthropic.com/research/tracing-thoughts-language-model" rel="noopener">https://www.anthropic.com/research/tracing-thoughts-language-model</a>): har du i frågan redan avslöjat vad du tror (exempelvis genom en ledande fråga), kan modellen bygga sitt resonemang för att hålla med dig. Att svaret stämmer med din gissning säger då mindre än när en kollega kommit fram till samma sak på egen hand.</p></li>
+<li><p class="text"><strong>Hur stark är slutsatsen i förhållande till resultatet?</strong> Det är lätt att göra misstaget att hoppa från enskilda observationer till generella principer, både för människor och för en AI-modell.</p></li>
+<li><p class="text"><strong>Vilket underlag har de utgått ifrån?</strong> För en medarbetare kan det vara vetenskapliga artiklar, myndighetsrapporter, nyhetsartiklar eller rena inlägg på sociala medier. För en AI-modell kan det på samma sätt vara ett dokument du gav den, en sökning den gjort på webben eller bara den data modellen har tränats på. Om svaret bara bygger på det modellen tränats på finns det inget underlag att kontrollera emot. I det fallet kan svaret låta rimligt utan att stämma.</p></li>
+<li><p class="text"><strong>Vilka osäkerheter har de redovisat?</strong> Att känna sig säker på sin sak är mänskligt och vi har alla en tendens att vara övertygade om våra egna slutsatser. Liknande tendenser kan du ibland se i AI-modeller, och som jag skrev i <a href="/artiklar/ai-ar-ingen-sokmotor/">AI är ingen sökmotor</a> säger AI-modellen sällan till om något är osäkert om du inte ber om det explicit.</p></li>
+</ol>
+
+<p class="text">Notera att ingen av frågorna kräver att du kan ämnet bättre än den vars arbete du granskar. Det handlar snarare om ett kritiskt förhållningssätt kring hur resultatet och slutsatsen har kommit till, inte om du själv vet svaret. Den första frågan kräver förvisso att du har en förväntan, men de tre andra fungerar även när du frågar AI om något du inte kan själv.</p>
+
+<p class="text">Det finns dock en viktig skillnad. Med en kollega kan du ställa kontrollfrågorna direkt och få ett svar. Det kan du förvisso med AI också, men svaret du får är baserat på sannolikhet. När du ber AI-modellen motivera sitt svar skriver den motiveringen i efterhand, och den kan låta helt rimlig utan att vara det som faktiskt låg bakom svaret. Det kan alltså vara en efterkonstruktion. Till exempel har Anthropic, företaget som utvecklar AI-tjänsten Claude, visat att en av deras modeller ibland gör en sak men säger en annan. Till exempel om man frågar hur den räknar ut 36 + 59 beskriver den skolmetoden med minnessiffror, samtidigt som modellen gör på ett helt annat sätt (Källa: <a href="https://www.anthropic.com/research/tracing-thoughts-language-model" rel="noopener">https://www.anthropic.com/research/tracing-thoughts-language-model</a>).</p>
+
+<p class="text">På grund av detta räcker det sällan med att be om en generell motivering för slutsatsen eller arbetet som helhet. Istället behöver vi be AI-modellen bryta ned sitt resonemang i de resultat, antaganden och villkor den utgått ifrån. Först då går det att kontrollera varje länk i kedjan själv, och avgöra om du håller med i resonemanget. Oavsett hur modellen säger att den tänkte. Ett sätt att göra detta är genom en enkel granskningsprompt:</p>
+
+<div class="prompt-block">
+<p class="prompt-block-label">Prompt (granskning):</p>
+<p class="prompt-block-text">Jag vill kunna kontrollera ditt svar. Lista exakt vilka resultat, antaganden och villkor din slutsats bygger på. Motivera varje punkt. Bedöm sedan för varje motivering om den är rimlig eller en efterkonstruktion. Om något bygger på data eller en källa, ange vilken (inklusive url eller var jag kan finna informationen) så att jag kan kontrollera den manuellt. Ange också vad du är mest osäker på.</p>
+</div>
+
+<p class="text">Glöm dock inte att den sista bedömningen ändå alltid är din, eftersom AI-modellens granskning av sig själv också är ett AI-svar. Skulle en källa inte finnas (t.ex. en så kallad hallucination) eller säga något annat, vet du vad svaret är värt.</p>
+</div>
+
+<div class="container blog main">
+<h2>Så här kör du granskningen i praktiken</h2>
+
+<ol>
+<li><p class="text">Ta ett AI-svar du har fått nyligen i jobbet, gärna ett som du tänkte använda till något.</p></li>
+<li><p class="text">Klistra in granskningsprompten ovan i samma chatt du arbetat i, så att AI-modellen har sitt eget svar framför sig.</p></li>
+<li><p class="text">Kör prompten.</p></li>
+<li><p class="text">Välj slutligen ut några av de viktigaste påståendena och kontrollera dem i källan.</p></li>
+</ol>
+
+<p class="text">Stämde det? Höll du med om slutsatserna och den logiska kopplingen mellan antaganden, villkor och resultat? För min egen del brukar det ofta stämma, men titt som tätt upptäcker jag att jag inte håller med AI-modellens resonemang. Se Figur 1 för hur det kan se ut när du kör prompten. I detta exempel har jag frågat vad man ska tänka på när man skriver blogginlägg.</p>
+</div>
+
+<div class="container blog main gray">
+<figure id="figur-1">
+<img src="/images/granska-ai-som-en-kollegas-arbete-figur-1-986.png" alt="Ett exempel på hur det kan se ut när du ber om att få granska AI-modellens resonemang." loading="lazy">
+<p class="caption">Figur 1. Ett exempel på hur det kan se ut när du ber om att få granska AI-modellens resonemang. Här för frågan om vad som är viktigt att tänka på när man skriver blogginlägg, besvarad av Claude (gratisversionen).</p>
+</figure>
+</div>
+
+<div class="container blog main">
+<h2>Granska det som är viktigt, inte allt</h2>
+
+<p class="text">Är man oroligt lagd är det lätt att tro att man måste granska varje påstående som AI-modellen utgår ifrån. Detta är inte alltid realistiskt, och ibland helt omöjligt. Samtidigt är det få av oss som granskar varje mening i en kollegas rapport. Istället behöver du anpassa hur kritiskt du granskar arbetet i förhållande till hur jobbigt det är om det blir fel. Alltså, ställ dig frågan: vad ska svaret användas till? Ett utkast till ett internt mejl klarar sig med en snabb läsning. Ett underlag till ett beslut, en siffra i en rapport eller något som ska vidare till din chef, en kund eller en medborgare är värt de extra minuterna det tar att kontrollera.</p>
+
+<p class="text">Förhoppningsvis kan de här frågorna hjälpa dig att avgöra när du kan lita på ett AI-svar och när du behöver kolla vidare.</p>
+
+<p class="text">Har du frågor eller invändningar? Mejla mig gärna. Fler artiklar publiceras efterhand.</p>
+
+<p class="text">Lycka till!</p>
+</div>
+
+</article>
+
+<div class="container blog main">
+<p class="text"><a href="/for-organisationer/">För organisationer</a></p>
+<p class="text"><a href="mailto:erik@enkelai.net">erik@enkelai.net</a></p>
+</div>
+
+<div class="container blog main">
+<h2>Nya artiklar direkt i inkorgen</h2>
+<p class="text">Jag skickar ett mejl när jag publicerar en ny artikel om AI i arbetslivet. Inget annat, ingen reklam.</p>
+
+<form class="newsletter-form" method="POST" action="https://c1894ea2.sibforms.com/v2/serve/MUIFAGZoIHXhNKqsJBTTOz7udWKTIJgBbd2zYsJN2guOXLlIvyFusT9XPiFs08dojuQsaE7mum7J4Nirzxye4t0_X0frl7nH0iMC5zg0SnDr_ff1WjKQtMm6BL-4nfEwhowXjivtlizvQusM98EuoeN_anDALyAy2-qzWCQ8vuXVg-tpWAsZLKsHt3qDzopOOTRiM1xzSuQ9c19lVQ==">
+<label for="EMAIL">Din e-postadress</label>
+<input type="email" id="EMAIL" name="EMAIL" required placeholder="din@epost.se" autocomplete="email">
+<label class="checkbox-label">
+<input type="checkbox" name="OPT_IN" value="1" required>
+<span>Ja, skicka mig ett mejl när nya artiklar publiceras. Jag har läst <a href="/integritet/">integritetspolicyn</a>.</span>
+</label>
+<input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off">
+<input type="hidden" name="locale" value="sv">
+<button type="submit">Prenumerera</button>
+</form>
+</div>
+
+<footer>
+<div class="container">
+<p>© 2026 Erik Klint</p>
+<p><a href="mailto:erik@enkelai.net">erik@enkelai.net</a></p>
+<p><a href="/nyhetsbrev/">Få nya artiklar via mejl</a></p>
+<p><a href="/integritet/">Integritet</a></p>
+<p>Byggd med <a href="https://shikun.io/projects/clarity">Clarity Template</a>.</p>
+</div>
+</footer>
+</body>
+</html>
