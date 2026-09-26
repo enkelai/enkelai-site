@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>När AI-svaren plötsligt blir sämre — kolla vilken modell som svarar | enkelAI</title>
+<meta name="description" content="Varför samma fråga kan ge sämre svar från en gång till en annan, hur du märker att AI-tjänsten har bytt modell och vad du kan göra åt det.">
+<link rel="canonical" href="https://enkelai.net/artiklar/nar-ai-svaren-blir-samre/">
+<meta property="og:title" content="När AI-svaren plötsligt blir sämre — kolla vilken modell som svarar">
+<meta property="og:description" content="Varför samma fråga kan ge sämre svar från en gång till en annan, hur du märker att AI-tjänsten har bytt modell och vad du kan göra åt det.">
+<meta property="og:url" content="https://enkelai.net/artiklar/nar-ai-svaren-blir-samre/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:image" content="https://enkelai.net/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="enkelAI — AI i arbetslivet. Konkret, på svenska, utan hype.">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512.png">
+<link rel="apple-touch-icon" href="/images/favicon-512.png">
+<meta name="theme-color" content="#024A61">
+<link rel="stylesheet" href="/assets/stylesheets/main_free.css">
+<link rel="stylesheet" href="/style.css">
+<style>
+/* Sidspecifik stil för tabellen, samma mönster som den sidspecifika
+   stilen för promptblocket i artikel 2 och 3. Läggs bara här, inte i
+   delade stilmallar (style.css / main_free.css). */
+.table-block {
+  margin: 1.5vh 0;
+  overflow-x: auto;
+}
+.table-block table {
+  width: 100%;
+  min-width: 320px;
+  border-collapse: collapse;
+  border: 1px solid var(--petrol-light);
+  font-family: "Charter", sans-serif;
+}
+.table-block th,
+.table-block td {
+  padding: 0.6em 0.9em;
+  text-align: left;
+  border: 1px solid var(--petrol-light);
+  color: var(--ink);
+}
+.table-block thead th {
+  background-color: var(--tint);
+  color: var(--petrol-deep);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.85em;
+  letter-spacing: 0.02em;
+}
+</style>
+</head>
+<body class="nav-artiklar">
+<header>
+<div class="container">
+<nav>
+<a class="wordmark" href="/">enkelAI</a>
+<ul>
+<li><a href="/">Hem</a></li>
+<li><a href="/artiklar/">Artiklar</a></li>
+<li><a href="/for-organisationer/">För organisationer</a></li>
+<li><a href="/nyhetsbrev/">Nyhetsbrev</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="container blog" id="first-content">
+    <div class="blog-title no-cover">
+        <div class="blog-intro">
+            <div>
+                <h1 class="title">När AI-svaren plötsligt blir sämre — kolla vilken modell som svarar</h1>
+                <p class="abstract"><em>TL;DR: Varför samma fråga kan ge sämre svar från en gång till en annan, hur du märker att AI-tjänsten har bytt modell och vad du kan göra åt det.</em></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<article>
+
+<div class="container blog main first">
+<p class="text">Häromdagen upptäckte jag att svaren i en chat jag jobbade i helt plötsligt ändrade karaktär, under tiden jag satt och skrev. Utan förvarning började svaren plötsligt bli betydligt mer generella, och de kom dessutom betydligt snabbare. Mina tidigare frågor och uppgifter hade tagit ca 2-3 minuter för AI-modellen att svara på, till att plötsligt bara ta ca 5-10 sekunder innan jag fick svar.</p>
+
+<p class="text">Min första misstanke var att mina egna frågor hade blivit lättare att svara på. När det inte verkade stämma tänkte jag istället att jag fått någon automatisk uppgraderad version av min prenumeration, alltså någon form av erbjudande att gratis testa en mer effektiv AI-modell. Tyvärr verkade förklaringen vara raka motsatsen, att svaren gick snabbare eftersom leverantören i hemlighet hade bytt över min AI-chat till att använda en enklare AI-modell. Lite som att du bett en erfaren kollega om hjälp och fått svar från en nyanställd istället, utan att någon sa till.</p>
+</div>
+
+<div class="container blog main">
+<h2>Varje AI-chatt kan ha flera modeller</h2>
+
+<p class="text">De flesta AI-leverantörer har flera AI-modeller att välja mellan, se exempel i Tabell 1.</p>
+
+<p class="caption">Tabell 1. Några av modellerna hos de vanligaste AI-leverantörerna (aktuell september 2026).</p>
+<div class="table-block">
+<table>
+<thead>
+<tr><th>ChatGPT</th><th>Claude</th><th>Gemini</th><th>SveaGPT</th></tr>
+</thead>
+<tbody>
+<tr><td>Astra</td><td>Opus</td><td>Pro</td><td>Mistral</td></tr>
+<tr><td>Sol</td><td>Sonnet</td><td>Thinking</td><td>Llama</td></tr>
+<tr><td>Luna</td><td>Haiku</td><td>Flash</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="text">De större och mer kraftfulla modellerna (exempelvis Astra och Opus) ger bättre svar men är långsammare och dyrare att köra för leverantören (på AI-språk säger man att varje prompt kostar mer “tokens”). De mindre och enklare modellerna svarar snabbare, men svaren blir också mer allmänna och mindre användbara. Eftersom olika modeller kostar olika mycket att köra begränsar leverantörerna användningen av de bästa modellerna utifrån hur mycket du betalar för tjänsten. Detta gäller speciellt för gratisversionerna som, åtminstone sett till pris, är gratis. I vissa fall kan du som användare fritt välja vilken modell du vill utgå ifrån, i andra fall väljer leverantören det åt dig beroende på vad du frågar. Det är därför svaren kan bli sämre och snabbare på samma gång: när gränsen är nådd ställer en del tjänster om din chat till en enklare modell. Det var detta som hände mig.</p>
+
+<p class="text">Hur tydligt skiftet av AI-modellen syns skiljer sig mycket mellan tjänsterna. I Claude kan du exempelvis med enkelhet se vilken modell som svarar, och hur mycket tokens (alltså data) du har kvar att använda, se Figur 1. När förbrukningen når 100% slutar AI-tjänsten helt att fungera tills dess att användningsfönstret blivit återställt (i skrivande stund per 5-timmar och per vecka).</p>
+</div>
+
+<div class="container blog main gray">
+<figure id="figur-1">
+<img src="/images/nar-ai-svaren-blir-samre-figur-1-807.png" alt="En översiktlig exempelbild över hur mycket tokens min AI-användning idag har kostat." loading="lazy">
+<p class="caption">Figur 1. En översiktlig exempelbild över hur mycket tokens min AI-användning idag har kostat. Min egen prenumeration begränsar användningen per 5-timmar (i detta exempel 71%), och per vecka (51%).</p>
+</figure>
+</div>
+
+<div class="container blog main">
+<p class="text">I Gemini är det svårare att se hur mycket tokens du använt, och hur mycket du har kvar. Här blir istället modellerna (exempelvis "Pro") gråmarkerade, samtidigt som tjänsten byter förvald modell i chattfönstret. Det syns, men bara om du tittar efter det. Se Figur 2.</p>
+</div>
+
+<div class="container blog main gray">
+<figure id="figur-2">
+<img src="/images/nar-ai-svaren-blir-samre-figur-2-1116.png" alt="Ett exempel på hur det kan se ut när Gemini begränsar åtkomsten till den mer avancerade modellen “3.1 Pro” efter en stunds intensiv användning." loading="lazy">
+<p class="caption">Figur 2. Ett exempel på hur det kan se ut när Gemini begränsar åtkomsten till den mer avancerade modellen “3.1 Pro” efter en stunds intensiv användning.</p>
+</figure>
+</div>
+
+<div class="container blog main">
+<p class="text">Problemet är att en del tjänster (till exempel Copilot Chat i Microsoft 365) inte visar vilken modell som svarar, ej heller om den byts ut mot en enklare modell när du ställer frågor. Speciellt inte om du har det via din arbetsplats, då det oftast endast är IT-avdelningen som har tillgång till denna typ av information.</p>
+</div>
+
+<div class="container blog main">
+<h2>Gör så här om din AI-modell ändrar beteende</h2>
+
+<p class="text">Att svaren varierar lite från gång till gång är normalt, det såg vi redan i <a href="/artiklar/ai-ar-ingen-sokmotor/">AI är ingen sökmotor</a>. Men om svaren plötsligt blir tydligt sämre eller mer generella, och dessutom kommer betydligt snabbare än vanligt, är det värt att reflektera över vad anledningen kan vara. Speciellt om dina typer av frågor inte har ändrats.</p>
+
+<p class="text">Här är några saker du kan kontrollera, med bakomliggande anledning:</p>
+
+<ol>
+<li><p class="text"><strong>Dubbelkolla inställningarna.</strong> Titta i modellväljaren om modellen har bytts ut i smyg, eller om den du brukar använda är gråmarkerad. Ofta finns detta val direkt i chat-rutan (dvs. där du skriver dina promptar).</p></li>
+<li><p class="text"><strong>Vänta en stund och fråga igen.</strong> Avvakta till exempel 20 minuter och ställ samma prompt igen. Blir svaret bättre har du troligen slagit i en gräns och tjänsten har haft en sorts cool-down-tid.</p></li>
+<li><p class="text"><strong>Fråga modellen själv, men se svaret som en ledtråd.</strong> I linje med att behandla AI-modellen som en kollega kan du alltid fråga den själv varför svaren plötsligt är annorlunda. Kom bara ihåg att din chat sällan kan se hur leverantören har valt modell, så förklaringen kan ibland bli en efterkonstruktion.</p></li>
+<li><p class="text"><strong>Fråga den som ansvarar för tjänsten.</strong> Använder du en AI-tjänst via jobbet och inte kan se vilken modell som svarar, kan du alltid fråga den som är ansvarig för avtalet. Ofta är det någon chef eller personal på IT-avdelningen.</p></li>
+</ol>
+</div>
+
+<div class="container blog main">
+<h2>Ett praktiskt tips på hur du kan träna dig att se problemet</h2>
+
+<p class="text">Öppna det AI-verktyg du brukar använda och leta upp inställningen för vilken modell som svarar. Ofta står detta direkt där du skriver chatten. Ställ sedan en fråga du har ställt tidigare, gärna en som kräver lite eftertanke av modellen. Lägg märke till hur snabbt och hur utförligt svaret kommer. Starta därefter en ny chat, byt modell och ställ samma fråga en gång till. Genom att jämföra svaren mellan de två AI-modellerna kommer du ha lättare att märka när något ändras även i framtiden.</p>
+
+<p class="text">Förhoppningsvis är det nu lite enklare att förstå varför dina AI-svar plötsligt blir sämre.</p>
+
+<p class="text">Har du frågor eller invändningar? Mejla mig gärna. Fler artiklar publiceras efterhand.</p>
+
+<p class="text">Lycka till!</p>
+</div>
+
+</article>
+
+<div class="container blog main">
+<p class="text"><a href="/for-organisationer/">För organisationer</a></p>
+<p class="text"><a href="mailto:erik@enkelai.net">erik@enkelai.net</a></p>
+</div>
+
+<div class="container blog main">
+<h2>Nya artiklar direkt i inkorgen</h2>
+<p class="text">Jag skickar ett mejl när jag publicerar en ny artikel om AI i arbetslivet. Inget annat, ingen reklam.</p>
+
+<form class="newsletter-form" method="POST" action="https://c1894ea2.sibforms.com/v2/serve/MUIFAGZoIHXhNKqsJBTTOz7udWKTIJgBbd2zYsJN2guOXLlIvyFusT9XPiFs08dojuQsaE7mum7J4Nirzxye4t0_X0frl7nH0iMC5zg0SnDr_ff1WjKQtMm6BL-4nfEwhowXjivtlizvQusM98EuoeN_anDALyAy2-qzWCQ8vuXVg-tpWAsZLKsHt3qDzopOOTRiM1xzSuQ9c19lVQ==">
+<label for="EMAIL">Din e-postadress</label>
+<input type="email" id="EMAIL" name="EMAIL" required placeholder="din@epost.se" autocomplete="email">
+<label class="checkbox-label">
+<input type="checkbox" name="OPT_IN" value="1" required>
+<span>Ja, skicka mig ett mejl när nya artiklar publiceras. Jag har läst <a href="/integritet/">integritetspolicyn</a>.</span>
+</label>
+<input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off">
+<input type="hidden" name="locale" value="sv">
+<button type="submit">Prenumerera</button>
+</form>
+</div>
+
+<footer>
+<div class="container">
+<p>© 2026 Erik Klint</p>
+<p><a href="mailto:erik@enkelai.net">erik@enkelai.net</a></p>
+<p><a href="/nyhetsbrev/">Få nya artiklar via mejl</a></p>
+<p><a href="/integritet/">Integritet</a></p>
+<p>Byggd med <a href="https://shikun.io/projects/clarity">Clarity Template</a>.</p>
+</div>
+</footer>
+</body>
+</html>
