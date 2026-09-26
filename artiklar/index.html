@@ -21,6 +21,22 @@
 <meta name="theme-color" content="#024A61">
 <link rel="stylesheet" href="/assets/stylesheets/main_free.css">
 <link rel="stylesheet" href="/style.css">
+<style>
+/* Sidspecifik stil för korten i artikellistan, samma mönster som de
+   sidspecifika stilarna i artiklarna (t.ex. tabellen i artikel 4).
+   Läggs bara här, inte i delade stilmallar (style.css / main_free.css).
+   Vänster/höger padding rörs inte - den är responsiv i mallen och styr
+   textkolumnens bredd på alla brytpunkter. Bakgrunden ändras inte
+   heller, så kontrasten mot texten blir densamma som idag - kortytan
+   markeras enbart med en tunn kant. */
+div.container.blog.main:has(> h2 > a[href^="/artiklar/"]) {
+  border: 1px solid var(--petrol-light);
+  border-radius: 10px;
+  margin: 1rem 0.75rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+</style>
 </head>
 <body class="nav-artiklar">
 <header>

@@ -235,3 +235,43 @@ body.nav-nyhetsbrev nav ul a[href="/nyhetsbrev/"] {
   text-decoration-thickness: 2px;
   text-decoration-color: var(--petrol-light);
 }
+
+/* ===================== Artikelnavigering ===================== */
+/* Länk till föregående/nästa artikel. Färg och hover återanvänder
+   samma mönster som brödtextens länkar - ingen ny färg. */
+
+.article-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.article-nav-link {
+  color: var(--petrol);
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.article-nav-link:hover {
+  color: var(--petrol);
+  text-decoration-color: var(--petrol-light);
+  text-decoration-thickness: 2px;
+}
+
+.article-nav-next {
+  margin-left: auto;
+  text-align: right;
+}
+
+@media screen and (max-width: 600px) {
+  .article-nav {
+    flex-direction: column;
+  }
+
+  .article-nav-next {
+    margin-left: 0;
+    text-align: left;
+  }
+}
