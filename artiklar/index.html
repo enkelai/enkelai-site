@@ -22,19 +22,51 @@
 <link rel="stylesheet" href="/assets/stylesheets/main_free.css">
 <link rel="stylesheet" href="/style.css">
 <style>
-/* Sidspecifik stil för korten i artikellistan, samma mönster som de
+/* Sidspecifik stil för posterna i artikellistan, samma mönster som de
    sidspecifika stilarna i artiklarna (t.ex. tabellen i artikel 4).
    Läggs bara här, inte i delade stilmallar (style.css / main_free.css).
-   Vänster/höger padding rörs inte - den är responsiv i mallen och styr
-   textkolumnens bredd på alla brytpunkter. Bakgrunden ändras inte
-   heller, så kontrasten mot texten blir densamma som idag - kortytan
-   markeras enbart med en tunn kant. */
+   Posterna numreras med en CSS-räknare och får en vertikal linje mellan
+   numret och texten. Räknaren ökas på varje post utan counter-reset: en
+   räknare som saknas skapas vid första ökningen och gäller sedan för
+   efterföljande syskon. Linjen sitter på rubriken och ingressen (inte på
+   hela postrutan, som är bredare än textkolumnen) utan mellanrum, så den
+   blir sammanhängande. Bakgrunden ändras inte, så kontrasten mot texten
+   är densamma som förut. */
 div.container.blog.main:has(> h2 > a[href^="/artiklar/"]) {
-  border: 1px solid var(--petrol-light);
-  border-radius: 10px;
-  margin: 1rem 0.75rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  counter-increment: artikel;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+div.container.blog.main:has(> h2 > a[href^="/artiklar/"]) > h2,
+div.container.blog.main:has(> h2 > a[href^="/artiklar/"]) > p.text {
+  margin-left: 3rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-left: 4px solid var(--petrol);
+  padding-left: 1rem;
+}
+div.container.blog.main:has(> h2 > a[href^="/artiklar/"]) > h2 {
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 0.75rem;
+}
+/* Numret ligger som första flexobjekt i rubriken, så det får samma
+   baslinje som rubrikens första rad. De negativa marginalerna flyttar
+   det ut till kolumnens vänsterkant (vänstermarginal 3rem + linje 4px +
+   luft 1rem = 4rem + 4px) och gör objektets marginalruta nollbred, så
+   att rubriktexten inte flyttas. Numret är dekoration: efter "/" får
+   skärmläsare tom text, så rubriken läses som förut. Webbläsare utan
+   den syntaxen ignorerar den andra deklarationen och visar numret. */
+div.container.blog.main:has(> h2 > a[href^="/artiklar/"]) > h2::before {
+  content: counter(artikel, decimal-leading-zero);
+  content: counter(artikel, decimal-leading-zero) / "";
+  flex: 0 0 2.5rem;
+  margin-left: calc(-4rem - 4px);
+  margin-right: calc(1.5rem + 4px);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--petrol-light);
 }
 </style>
 </head>
