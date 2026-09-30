@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kolla alltid var siffrorna kommer ifrån | enkelAI</title>
+<meta name="description" content="AI-sammanfattningar ser ofta väldigt trovärdiga ut. Tyvärr är det inte ovanligt att de återger påståenden och siffror rätt, samtidigt som de tappar var de kommer ifrån. Så kontrollerar du siffrorna du tänker använda, och varför det kan löna sig att börja med dina egna frågor.">
+<link rel="canonical" href="https://enkelai.net/artiklar/nar-ai-sammanfattar-en-rapport/">
+<meta property="og:title" content="Kolla alltid var siffrorna kommer ifrån">
+<meta property="og:description" content="AI-sammanfattningar ser ofta väldigt trovärdiga ut. Tyvärr är det inte ovanligt att de återger påståenden och siffror rätt, samtidigt som de tappar var de kommer ifrån. Så kontrollerar du siffrorna du tänker använda, och varför det kan löna sig att börja med dina egna frågor.">
+<meta property="og:url" content="https://enkelai.net/artiklar/nar-ai-sammanfattar-en-rapport/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:image" content="https://enkelai.net/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="enkelAI — AI i arbetslivet. Konkret, på svenska, utan hype.">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512.png">
+<link rel="apple-touch-icon" href="/images/favicon-512.png">
+<meta name="theme-color" content="#024A61">
+<link rel="stylesheet" href="/assets/stylesheets/main_free.css">
+<link rel="stylesheet" href="/style.css">
+<style>
+/* Sidspecifik stil för promptblocket och OBS-rutan, samma mönster som
+   artikel 2, 3 och 5. Läggs bara här, inte i delade stilmallar
+   (style.css / main_free.css). */
+.prompt-block {
+  margin: 1.5vh 0;
+  padding: 1.2em 1.4em;
+  border: 1px solid var(--petrol-light);
+  border-left: 4px solid var(--petrol);
+  border-radius: 6px;
+  background-color: var(--tint);
+}
+.prompt-block .prompt-block-label {
+  margin: 0 0 0.8em 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.8em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--petrol-deep);
+}
+.prompt-block .prompt-block-text {
+  margin: 0 0 0.8em 0;
+  padding: 0;
+  font-family: "Charter", sans-serif;
+  color: var(--ink);
+}
+.prompt-block .prompt-block-text:last-child {
+  margin-bottom: 0;
+}
+.obs-box {
+  margin: 1.5vh 0;
+  padding: 1.2em 1.4em;
+  border: 1px solid var(--sand);
+  border-left: 4px solid var(--terracotta);
+  border-radius: 6px;
+  background-color: var(--tint);
+}
+.obs-box p.text {
+  margin: 0;
+  padding: 0;
+}
+</style>
+</head>
+<body class="nav-artiklar">
+<header>
+<div class="container">
+<nav>
+<a class="wordmark" href="/">enkelAI</a>
+<ul>
+<li><a href="/">Hem</a></li>
+<li><a href="/artiklar/">Artiklar</a></li>
+<li><a href="/for-organisationer/">För organisationer</a></li>
+<li><a href="/nyhetsbrev/">Nyhetsbrev</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="container blog" id="first-content">
+    <div class="blog-title no-cover">
+        <div class="blog-intro">
+            <div>
+                <nav aria-label="Artikelnavigering" class="article-nav">
+<a class="article-nav-link article-nav-prev" href="/artiklar/granska-ai-som-en-kollegas-arbete/">← Föregående: Granska AI-modellens svar som om det vore din kollegas arbete</a>
+</nav>
+                <h1 class="title">Kolla alltid var siffrorna kommer ifrån</h1>
+                <p class="abstract"><em>TL;DR: AI-sammanfattningar ser ofta väldigt trovärdiga ut. Tyvärr är det inte ovanligt att de återger påståenden och siffror rätt, samtidigt som de tappar var de kommer ifrån. Så kontrollerar du siffrorna du tänker använda, och varför det kan löna sig att börja med dina egna frågor.</em></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<article>
+
+<div class="container blog main first">
+<p class="text">Att låta AI sammanfatta en lång rapport är lockande: Du laddar upp dokumentet, skriver en enkel prompt och får tillbaka en prydlig text med rubriker och siffror. Men hur vet du att siffrorna betyder samma sak i sammanfattningen som i rapporten? Kortfattat: det gör du inte alltid.</p>
+</div>
+
+<div class="container blog main">
+<h2>AI-sammanfattningar tappar ibland sammanhanget</h2>
+
+<p class="text">Inför den här artikeln gjorde jag ett test. Jag bad AI-modellen Gemini 3 Flash sammanfatta en kort rapport från fackförbundet Akavia (Källa: <a href="https://www.akavia.se/siteassets/04-om-akavia/rapporter/ai-i-kommunens-tjanst-sa-anvander-sverges-kommuner-ai.pdf" rel="noopener">https://www.akavia.se/siteassets/04-om-akavia/rapporter/ai-i-kommunens-tjanst-sa-anvander-sverges-kommuner-ai.pdf</a>) om hur Sveriges kommuner använder AI. Testet var väldigt enkelt: jag laddade upp rapporten som bifogad fil och skrev bara "sammanfatta rapporten", utan några särskilda instruktioner. Efter någon minut fick jag tillbaka en sammanfattning som både såg snygg och rimlig ut. De flesta siffrorna verkade stämma med rapporten, och sammanfattningen innehöll även information om urvalet (de 170 kommuner som svarade på enkäten, av alla landets 290 kommuner). So far - so good, vilket man också kan förvänta sig av en såpass kort rapport (22 sidor).</p>
+
+<p class="text">När jag jämförde siffrorna lite mer detaljerat visade det sig dock att en av dem inte kom från samma undersökning som de andra. Enligt sammanfattningen hade knappt 1 av 10 fackligt förtroendevalda i kommunal sektor varit delaktiga när AI implementerades. Eftersom sammanfattningen inte sa något annat antog jag att siffran kom från samma enkät. I själva rapporten står det dock (i meningen före påståendet) att siffran kommer från "<em>tidigare undersökningar från Akavia</em>". Alltså en annan datakälla med andra tillfrågade, se Figur 1. I det här specifika fallet är kanske inte skillnaden särskilt katastrofal. Men det vittnar ändå om en tydlig risk med att förlita sig blint på sammanfattningar gjorda med AI-modeller.</p>
+</div>
+
+<div class="container blog main gray">
+<figure id="figur-1">
+<img src="/images/nar-ai-sammanfattar-en-rapport-figur-1a-606.png" alt="Siffran i sammanfattningen från Gemini 3 Flash." loading="lazy">
+<img src="/images/nar-ai-sammanfattar-en-rapport-figur-1b-995.png" alt="Samma siffra i Akavias rapport." loading="lazy">
+<p class="caption">Figur 1. Siffran i sammanfattningen (bilden över) från Gemini 3 Flash, och samma siffra i Akavias rapport (bilden under). Notera att meningen före påståendet i rapporten inte följde med.</p>
+</figure>
+</div>
+
+<div class="container blog main">
+<h2>Fel i sammanfattningar är ofta svåra att se</h2>
+
+<p class="text">Siffran var inte påhittad. Den fanns i rapporten och var rätt återgiven. Det som försvann var sammanhanget om var den kom ifrån: vilka som hade tillfrågats, när och hur den hade mätts. Med andra ord, all den information som avgör vad siffran faktiskt betydde.</p>
+
+<p class="text">Det luriga är att sammanfattningen inte såg ut som om något saknades. Sammanfattningen såg tvärtom noggrann ut, och beskrivningen av metod längst ned gjorde att påståendet såg ut att komma från samma enkät som resten. Ingenstans stod det att rapporten även använder siffror från andra undersökningar bland Akavias medlemmar, även om detta gick att läsa i själva rapporten under kapitlet "Om undersökningen".</p>
+
+<p class="text">För att se om det var en slump gjorde jag om testet med ett annat konto i en ny chat. Denna gång kom facksiffran inte med alls, men tyvärr tappade en annan siffra sitt sammanhang i stället. I rapporten svarar <em>fyra av tio</em> av de <em>största</em> kommunerna att AI <em>"i viss mån"</em> används i hela verksamheten. AI-modellen översatte detta till att <em>40 procent</em> har <em>"en bredare användning över hela organisationen"</em>, vilket inte är samma sak. En tydlig lärdom är alltså att det inte är samma siffra varje gång som kan feltolkas, och du kan tyvärr inte veta i förväg vilken det gäller.</p>
+
+<p class="text">Jag märkte dessutom en sak till. När jag ställde följdfrågor i den första chatten kom det detaljer som inte stämde, och när jag bad om ett ordagrant citat från sidan 18 svarade AI-modellen att bara de tre första sidorna hade lästs in, se Figur 2. Om det verkligen stämde är omöjligt att veta, sammanfattningen innehöll ju rätt siffror från sidor långt in i rapporten. I det andra testet var det däremot inga problem med citat. Samtidigt lät båda sammanfattningarna lika säkra på sin sak. Hur säkert ett svar låter säger alltså ingenting om hur mycket av dokumentet det bygger på.</p>
+</div>
+
+<div class="container blog main gray">
+<figure id="figur-2">
+<img src="/images/nar-ai-sammanfattar-en-rapport-figur-2-622.png" alt="AI-modellens svar på min kontrollfråga om den kunde ge mig ett ordagrant citat på sidan 18." loading="lazy">
+<p class="caption">Figur 2. AI-modellens svar på min kontrollfråga om den kunde ge mig ett ordagrant citat på sidan 18.</p>
+</figure>
+</div>
+
+<div class="container blog main">
+<h2>Ställ dig samma frågor som för en kollegas arbete</h2>
+
+<p class="text">För att få bukt med problemet kan du (än en gång) fundera på hur du själv beter dig mot en kollega som bett dig granska hennes sammanfattning. För min egen del brukar jag tänka såhär: hur mycket jag kontrollerar någon annans siffra beror helt på hur mycket förtroende jag har för personen som gjort beräkningen. Har jag mindre förtroende vill jag kolla det mesta. Har jag mer förtroende kollar jag någon enstaka siffra och lägger sedan mest tid på resonemang, osäkerheter och slutsatser.</p>
+
+<p class="text">Samtidigt känns det lite svårare med en AI-sammanfattning. I exemplen ovan såg alla delarna lika trovärdiga ut, oavsett om de stämde eller inte. AI-modellen sa själv heller ingenting om att vissa siffror kom från ett annat underlag. Med det i bakhuvudet behöver du behandla sammanfattningen som ett arbete från en ny kollega, vars styrkor och svagheter du ännu inte känner. I praktiken innebär detta tre grundläggande frågor till varje siffra du tänker använda. Samma frågor gäller för påståenden:</p>
+
+<ol>
+<li><p class="text"><strong>För vilka gäller siffran?</strong> Alla, de som svarade eller en viss grupp?</p></li>
+<li><p class="text"><strong>När samlades datan in?</strong> Vid samma tillfälle som resten av underlaget eller tidigare?</p></li>
+<li><p class="text"><strong>Hur mättes den?</strong> Till exempel i en enkät där någon själv uppger något (och i så fall vilken enkät)?</p></li>
+</ol>
+</div>
+
+<div class="container blog main">
+<h2>Så här gör du i praktiken</h2>
+
+<p class="text">Kontrollen behöver inte omfatta allt, bara det du faktiskt ska använda. Så här gör du:</p>
+
+<ol>
+<li><p class="text"><strong>Välj ut siffrorna.</strong> Utgå från en sammanfattning du redan har använt eller tänker skicka vidare, och ta bara med de siffror du själv ska använda.</p></li>
+<li><p class="text"><strong>Jämför beskrivningen av underlaget.</strong> Läs vad sammanfattningen säger att rapporten bygger på och jämför med rapportens eget avsnitt om metoden (i Akavias rapport låg detta under rubriken <em>"Om undersökningen"</em>). Nämner rapporten fler undersökningar eller förbehåll än sammanfattningen, finns det en risk att någon av dina siffror kommer från en annan källa.</p></li>
+<li><p class="text"><strong>Be om sidhänvisningar.</strong> Be AI-tjänsten om sidnummer och ett ordagrant citat för varje siffra. Be den även att ta med meningen före och efter så att du ser allt i ett sammanhang. Notera att detta inte är ett bevis på att allt stämmer; i mitt första test kom det som sagt med detaljer som inte stämde. Se det snarare som en möjlighet för dig att hitta rätt i originalrapporten.</p></li>
+<li><p class="text"><strong>Kontrollera i originalrapporten.</strong> Leta upp siffran, läs meningen före och efter och ställ de tre frågorna. Detta är ett sätt att stresstesta siffran.</p></li>
+<li><p class="text"><strong>Använd siffran med sitt sammanhang.</strong> När siffran ska användas skriver du ut vilka den gäller, när och hur den mättes. Säger källan inte det, skriver du att det inte framgår. På så sätt har du varit tydlig med vad du vet, och vilka osäkerheter man kan förvänta sig.</p></li>
+</ol>
+
+<p class="text">Så här kan det se ut med siffran från exemplet:</p>
+
+<ul>
+<li><p class="text"><strong>Det som stod i AI-sammanfattningen för Akavia-rapporten:</strong> "Få fackligt förtroendevalda uppges vara delaktiga när AI implementeras i kommunal sektor (knappt 1 av 10)."</p></li>
+<li><p class="text"><strong>Efter kontroll steg 1-5:</strong> "Enligt tidigare undersökningar från Akavia uppger knappt 1 av 10 fackligt förtroendevalda i kommunal sektor att de har varit delaktiga när AI införts. När undersökningarna gjordes framgår inte (Akavia, AI i kommunens tjänst, s. 10)."</p></li>
+</ul>
+
+<p class="text">Notera att kontrollen ibland slutar i ett svar som inte går att få fram; rapporten säger helt enkelt inte när de tidigare undersökningarna gjordes. Då behöver du själv göra en bedömning om det är något du själv kan stå för, eller om du ska låta bli att använda siffran i det du skriver. Hur mycket du i slutändan behöver kontrollera beror självklart på vad sammanfattningen ska användas till, vilket jag skrev mer om i slutet av <a href="/artiklar/granska-ai-som-en-kollegas-arbete/">Granska AI-modellens svar som om det vore din kollegas arbete</a>.</p>
+</div>
+
+<div class="container blog main">
+<h2>Varför sammanfatta överhuvudtaget?</h2>
+
+<p class="text">I dessa AI-tider finns det dock en fråga till som är värd att ställa: varför be om en sammanfattning överhuvudtaget? Akavias rapport hade redan en egen sammanfattning på två sidor, varför inte bara utgå från den? En motsvarande AI-sammanfattning som i exemplen ovan blir dessutom ofta för generell, av samma skäl som jag skrev om i <a href="/artiklar/ai-ar-ingen-sokmotor/">AI är ingen sökmotor</a>. Utan kontext fyller AI-modellen själv i luckorna.</p>
+
+<p class="text">Jag har därför istället börjat ställa de frågor jag själv vill ha svar på i dokumentet, och därefter se sammanfattningen som ett komplement. Med AI kan du nämligen få en sammanfattning som huvudsakligen utgår från de perspektiv som är viktiga för <strong><em>dig</em></strong>. Och skulle du inte veta vilka perspektiv du är mest intresserad av, kan du istället låta AI-modellen ställa frågorna först (precis som i <a href="/artiklar/lat-ai-stalla-fragorna/">Låt AI ställa frågorna</a>). I samma vända kan du också bygga in de tre kontrollfrågorna direkt i din prompt, så att den slutliga AI-sammanfattningen både blir specifik och kontrollerbar.</p>
+
+<div class="obs-box">
+<p class="text"><strong>OBS!</strong> Ladda endast upp offentliga dokument, alternativt använd en AI-modell som din arbetsgivare har godkänt. Ladda aldrig upp personuppgifter eller sekretessbelagd information i en tjänst som inte är godkänd.</p>
+</div>
+
+<p class="text">Så här såg det ut när jag testade att ställa mina egna frågor till Akavias rapport:</p>
+
+<div class="prompt-block">
+<p class="prompt-block-label">Prompt (Sammanfattningsfrågor baserat på ett hypotetiskt exempel):</p>
+<p class="prompt-block-text">Jag arbetar med kompetensförsörjning i en kommun och ska ta fram ett underlag till min chef om AI-utbildning för medarbetare. Svara utifrån den bifogade rapporten på två frågor:</p>
+<p class="prompt-block-text">1. Hur har kommunerna utbildat sina medarbetare i AI, och vad vill medarbetarna själva?<br>
+2. Hur delaktigt är facket när kommuner inför AI?</p>
+<p class="prompt-block-text">För varje siffra du använder: ange vilka den gäller, när den mättes, hur den mättes och på vilken sida den står. Skriv "framgår inte" om rapporten inte säger det.</p>
+</div>
+
+<p class="text">De två sista meningarna, där de tre frågorna ligger, är de som går att återanvända om du vill anpassa prompten till ett eget exempel. Resten byter du mot din egen roll och dina egna frågor. Räkna med att svaret blir långt, men sidhänvisningarna gör det snabbare att kontrollera (se Figur 3).</p>
+</div>
+
+<div class="container blog main gray">
+<figure id="figur-3">
+<img src="/images/nar-ai-sammanfattar-en-rapport-figur-3-606.png" alt="Del av svaret från Gemini 3 Flash när frågorna ställs direkt och tjänsten ombeds ange vilka, när, hur och sida för varje siffra." loading="lazy">
+<p class="caption">Figur 3. Del av svaret från Gemini 3 Flash när frågorna ställs direkt och tjänsten ombeds ange vilka, när, hur och sida för varje siffra.</p>
+</figure>
+</div>
+
+<div class="container blog main">
+<p class="text">Notera att resultatet i Figur 3 blev mycket mer användbart för det vidare arbetet än den mer generella sammanfattningen i början av artikeln. De flesta siffror redovisades med kontrollfrågorna (dvs. om vilka, när och hur), och för facksiffran skrev tjänsten att det inte framgår när den mättes, se Figur 4.</p>
+</div>
+
+<div class="container blog main gray">
+<figure id="figur-4">
+<img src="/images/nar-ai-sammanfattar-en-rapport-figur-4-630.png" alt="Samma påstående som i den generella sammanfattningen, men nu med korrekt information om kontrollfrågorna." loading="lazy">
+<p class="caption">Figur 4. Samma påstående som i den generella sammanfattningen, men nu med korrekt information om kontrollfrågorna.</p>
+</figure>
+</div>
+
+<div class="container blog main">
+<p class="text">Helt rätt blev det dock inte. Jag körde prompten två gånger, och båda gångerna angav tjänsten ett exakt datum för tre siffror om Akavias medlemmar. Det är ett datum som rapporten inte kopplar till dem.</p>
+
+<p class="text">Sammanfattningsvis kan vi alltså säga att en mer specifik prompt ger ett mer användbart svar, men inte nödvändigtvis ett svar som är mer sant. Även en skräddarsydd sammanfattning är en sammanfattning, så de tre kontrollfrågorna gäller fortfarande för alla siffror eller påståenden du tänker använda.</p>
+
+<p class="text">Har du frågor eller invändningar? Mejla mig gärna. Fler artiklar publiceras efterhand.</p>
+
+<p class="text">Lycka till!</p>
+</div>
+
+</article>
+
+<div class="container blog main">
+<p class="text"><a href="/for-organisationer/">För organisationer</a></p>
+<p class="text"><a href="mailto:erik@enkelai.net">erik@enkelai.net</a></p>
+</div>
+
+<div class="container blog main">
+<h2>Nya artiklar direkt i inkorgen</h2>
+<p class="text">Jag skickar ett mejl när jag publicerar en ny artikel om AI i arbetslivet. Inget annat, ingen reklam.</p>
+
+<form class="newsletter-form" method="POST" action="https://c1894ea2.sibforms.com/v2/serve/MUIFAGZoIHXhNKqsJBTTOz7udWKTIJgBbd2zYsJN2guOXLlIvyFusT9XPiFs08dojuQsaE7mum7J4Nirzxye4t0_X0frl7nH0iMC5zg0SnDr_ff1WjKQtMm6BL-4nfEwhowXjivtlizvQusM98EuoeN_anDALyAy2-qzWCQ8vuXVg-tpWAsZLKsHt3qDzopOOTRiM1xzSuQ9c19lVQ==">
+<label for="EMAIL">Din e-postadress</label>
+<input type="email" id="EMAIL" name="EMAIL" required placeholder="din@epost.se" autocomplete="email">
+<label class="checkbox-label">
+<input type="checkbox" name="OPT_IN" value="1" required>
+<span>Ja, skicka mig ett mejl när nya artiklar publiceras. Jag har läst <a href="/integritet/">integritetspolicyn</a>.</span>
+</label>
+<input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off">
+<input type="hidden" name="locale" value="sv">
+<button type="submit">Prenumerera</button>
+</form>
+</div>
+
+<div class="container blog main">
+<nav aria-label="Artikelnavigering" class="article-nav">
+<a class="article-nav-link article-nav-prev" href="/artiklar/granska-ai-som-en-kollegas-arbete/">← Föregående: Granska AI-modellens svar som om det vore din kollegas arbete</a>
+</nav>
+</div>
+
+<footer>
+<div class="container">
+<p>© 2026 Erik Klint</p>
+<p><a href="mailto:erik@enkelai.net">erik@enkelai.net</a></p>
+<p><a href="/nyhetsbrev/">Få nya artiklar via mejl</a></p>
+<p><a href="/integritet/">Integritet</a></p>
+<p>Byggd med <a href="https://shikun.io/projects/clarity">Clarity Template</a>.</p>
+</div>
+</footer>
+</body>
+</html>
