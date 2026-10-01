@@ -383,3 +383,93 @@ article div.container.blog.main.gray:has(> figure) + div.container.blog.main > :
 article div.container.blog.main.gray > figure > p.caption:last-child {
   padding-bottom: 0;
 }
+
+/* ===================== Inledningsbild och filmrad ===================== */
+/* Inledningsbilden (figure.intro-figure) ligger i samma gråa panel som
+   artikelns övriga figurer och får därför deras luft (2rem / 3rem) via
+   reglerna ovan. Mallens img { width: 100% } räcker inte när bilden har
+   width/height-attribut: höjden måste bli auto, och bilden förstoras
+   aldrig över sin egen bredd (2400 px). */
+article figure.intro-figure img {
+  max-width: 2400px;
+  height: auto;
+}
+
+/* Ingen övre marginal ovanför inledningsbilden: luften upp till TL;DR-raden
+   kommer bara från rubrikblockets egen padding. */
+article div.container.blog.main.gray:has(> figure.intro-figure) {
+  margin-top: 0;
+}
+
+/* Efter panelen ska bildens luft inte dubbleras av mallens .first-marginal. */
+article div.container.blog.main.gray:has(> figure.intro-figure) + div.container.blog.main.first {
+  margin-top: 0;
+}
+
+/* Filmraden: en länk i textkolumnen, med samma luft över och under som
+   kring figurerna (2rem under 700 px, 3rem från 700 px). Typsnittet
+   sätts uttryckligen: <body> saknar font-family, så utan det faller
+   länken tillbaka på webbläsarens standardserif (som navigeringen gjorde). */
+article div.container.blog.main.film-row-wrap {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;  /* luften över kommer från rubrikblockets padding */
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 700px) {
+  article div.container.blog.main.film-row-wrap {
+    margin-bottom: 3rem;
+  }
+}
+
+article div.container.blog.main.film-row-wrap + div.container.blog.main.first {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+article div.container.blog.main.film-row-wrap + div.container.blog.main.first > :first-child {
+  padding-top: 0;
+}
+
+a.film-row {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-height: 44px;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--petrol);
+  border-radius: 6px;
+  font-family: "Charter", sans-serif;
+  text-decoration: none;
+}
+
+a.film-row:hover {
+  border-color: var(--petrol-deep);
+}
+
+.film-row-icon {
+  flex: none;
+  width: 40px;  /* mallens svg { width: 100% } annars vinner över width-attributet */
+  height: 40px;
+  color: var(--terracotta);
+}
+
+.film-row-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.film-row-title {
+  color: var(--petrol-deep);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.film-row-source {
+  color: var(--ink);
+  font-size: 0.85em;
+  line-height: 1.3;
+}
