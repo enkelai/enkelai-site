@@ -237,21 +237,30 @@ body.nav-nyhetsbrev nav ul a[href="/nyhetsbrev/"] {
 }
 
 /* ===================== Artikelnavigering ===================== */
-/* Länk till föregående/nästa artikel. Färg och hover återanvänder
-   samma mönster som brödtextens länkar - ingen ny färg. */
+/* Länk till föregående/nästa artikel, två varianter: .article-nav-top
+   (högst upp, bara "← Föregående" / "Nästa →") och .article-nav-bottom
+   (längst ned, kort med riktning + titel). Färger och hörnradie
+   återanvänds från resten av sidan - inga nya värden.
+
+   Typsnitt: länkarna i navet ärver från <body>, som saknar font-family
+   (bara p, h* och a-regeln i mallen sätter något), så de föll tillbaka på
+   webbläsarens standardserif. Brödtexten får Charter via
+   div.container.blog p.text, så samma typsnitt sätts här uttryckligen. */
 
 .article-nav {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   gap: 0.75rem 1.5rem;
   margin: 1.5rem 0;
+  font-family: "Charter", sans-serif;
 }
 
 .article-nav-link {
+  box-sizing: border-box;
+  min-height: 44px;
+  font-family: inherit;
   color: var(--petrol);
   overflow-wrap: break-word;
-  max-width: 100%;
+  min-width: 0;
 }
 
 .article-nav-link:hover {
@@ -260,18 +269,107 @@ body.nav-nyhetsbrev nav ul a[href="/nyhetsbrev/"] {
   text-decoration-thickness: 2px;
 }
 
-.article-nav-next {
-  margin-left: auto;
-  text-align: right;
+/* Högst upp: två korta länkar, Föregående till vänster, Nästa till höger.
+   Finns bara en står den kvar på sin sida. */
+.article-nav-top {
+  justify-content: space-between;
 }
 
-@media screen and (max-width: 600px) {
-  .article-nav {
-    flex-direction: column;
+.article-nav-top .article-nav-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.article-nav-top .article-nav-next {
+  margin-left: auto;
+}
+
+/* Längst ned: kort med tunn kant, hela kortet är länken. */
+.article-nav-bottom {
+  flex-direction: column;
+}
+
+.article-nav-bottom .article-nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--petrol-light);
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.article-nav-bottom .article-nav-link:hover {
+  border-color: var(--petrol);
+}
+
+.article-nav-bottom .article-nav-link:hover .article-nav-title {
+  text-decoration: underline;
+  text-decoration-color: var(--petrol-light);
+  text-decoration-thickness: 2px;
+}
+
+.article-nav-dir {
+  font-size: 0.875em;
+  line-height: 1.4;
+  color: var(--petrol);
+}
+
+/* Titeln följer brödtextens storlek (ärvs). */
+.article-nav-title {
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+/* Två kolumner från 700 px. Varje kort har sin fasta kolumn, så ett
+   ensamt kort behåller både plats och bredd. */
+@media screen and (min-width: 700px) {
+  .article-nav-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
   }
 
-  .article-nav-next {
-    margin-left: 0;
-    text-align: left;
+  .article-nav-bottom .article-nav-prev {
+    grid-column: 1;
   }
+
+  .article-nav-bottom .article-nav-next {
+    grid-column: 2;
+  }
+}
+
+/* ===================== Figurer i artiklar ===================== */
+/* Löptext och figur ligger för tätt i mallen: avståndet bestod av
+   vh-baserade paddingar som varierar med fönsterhöjden (0.5-2vh i
+   behållarna, 1.5vh i p.text, 1vh i bildtexten). Här är det fast:
+   2rem från löptexten till bildens överkant och 2rem från bildtextens
+   sista rad till nästa text. Den tonade panelen behåller en liten fast
+   innermarginal. Avgränsat till <article> - bara artikelsidorna har
+   figurpaneler. Avståndet mellan bild och bildtext, och mellan bilder i
+   samma figur, rörs inte (det är img/p.caption:s egen padding). */
+
+article div.container.blog.main.gray:has(> figure) {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Nollar mallens vh-padding närmast panelen, så att bara de 2rem gäller. */
+article div.container.blog.main:has(+ div.container.blog.main.gray > figure) {
+  padding-bottom: 0;
+}
+
+article div.container.blog.main.gray:has(> figure) + div.container.blog.main {
+  padding-top: 0;
+}
+
+article div.container.blog.main.gray:has(> figure) + div.container.blog.main > :first-child {
+  padding-top: 0;
+}
+
+article div.container.blog.main.gray > figure > p.caption:last-child {
+  padding-bottom: 0;
 }

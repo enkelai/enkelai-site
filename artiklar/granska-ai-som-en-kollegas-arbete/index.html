@@ -73,9 +73,9 @@
     <div class="blog-title no-cover">
         <div class="blog-intro">
             <div>
-                <nav aria-label="Artikelnavigering" class="article-nav">
-<a class="article-nav-link article-nav-prev" href="/artiklar/nar-ai-svaren-blir-samre/">← Föregående: När AI-svaren plötsligt blir sämre — kolla vilken modell som svarar</a>
-<a class="article-nav-link article-nav-next" href="/artiklar/nar-ai-sammanfattar-en-rapport/">Nästa: Kolla alltid var siffrorna kommer ifrån →</a>
+                <nav aria-label="Artikelnavigering" class="article-nav article-nav-top">
+<a class="article-nav-link article-nav-prev" href="/artiklar/nar-ai-svaren-blir-samre/" aria-label="Föregående artikel: När AI-svaren plötsligt blir sämre — kolla vilken modell som svarar">← Föregående</a>
+<a class="article-nav-link article-nav-next" href="/artiklar/nar-ai-sammanfattar-en-rapport/" aria-label="Nästa artikel: Kolla alltid var siffrorna kommer ifrån">Nästa →</a>
 </nav>
                 <h1 class="title">Granska AI-modellens svar som om det vore din kollegas arbete</h1>
                 <p class="abstract"><em>TL;DR: Fyra frågor du antagligen redan ställer när du granskar en kollegas arbete, och hur du använder dem på AI-modellens svar.</em></p>
@@ -96,7 +96,7 @@
 <p class="text">När jag granskar en kollegas eller en nyanställds arbete börjar jag ofta med att ställa mig fyra frågor:</p>
 
 <ol>
-<li><p class="text"><strong>Är slutsatsen rimlig och förväntad?</strong> Alltså, stämmer den med det du själv hade gissat eller rentav vet? En slutsats som förvånar kan självklart vara en ny insikt, men den kan också vittna om att resonemanget blivit fel längs med vägen. Båda två anledningarna är skäl att titta närmare på delar av arbetet. När du arbetar med en AI-modell finns dessutom en till fälla (Källa: <a href="https://www.anthropic.com/research/tracing-thoughts-language-model" rel="noopener">https://www.anthropic.com/research/tracing-thoughts-language-model</a>): har du i frågan redan avslöjat vad du tror (exempelvis genom en ledande fråga), kan modellen bygga sitt resonemang för att hålla med dig. Att svaret stämmer med din gissning säger då mindre än när en kollega kommit fram till samma sak på egen hand.</p></li>
+<li><p class="text"><strong>Är slutsatsen rimlig och förväntad?</strong> Alltså, stämmer den med det du själv hade gissat eller rentav vet? En slutsats som förvånar kan självklart vara en ny insikt, men den kan också vittna om att resonemanget blivit fel längs med vägen. Båda två anledningarna är skäl att titta närmare på delar av arbetet. När du arbetar med en AI-modell finns dessutom en till fälla (Källa: <a href="https://www.anthropic.com/research/tracing-thoughts-language-model" rel="noopener">Anthropic</a>): har du i frågan redan avslöjat vad du tror (exempelvis genom en ledande fråga), kan modellen bygga sitt resonemang för att hålla med dig. Att svaret stämmer med din gissning säger då mindre än när en kollega kommit fram till samma sak på egen hand.</p></li>
 <li><p class="text"><strong>Hur stark är slutsatsen i förhållande till resultatet?</strong> Det är lätt att göra misstaget att hoppa från enskilda observationer till generella principer, både för människor och för en AI-modell.</p></li>
 <li><p class="text"><strong>Vilket underlag har de utgått ifrån?</strong> För en medarbetare kan det vara vetenskapliga artiklar, myndighetsrapporter, nyhetsartiklar eller rena inlägg på sociala medier. För en AI-modell kan det på samma sätt vara ett dokument du gav den, en sökning den gjort på webben eller bara den data modellen har tränats på. Om svaret bara bygger på det modellen tränats på finns det inget underlag att kontrollera emot. I det fallet kan svaret låta rimligt utan att stämma.</p></li>
 <li><p class="text"><strong>Vilka osäkerheter har de redovisat?</strong> Att känna sig säker på sin sak är mänskligt och vi har alla en tendens att vara övertygade om våra egna slutsatser. Liknande tendenser kan du ibland se i AI-modeller, och som jag skrev i <a href="/artiklar/ai-ar-ingen-sokmotor/">AI är ingen sökmotor</a> säger AI-modellen sällan till om något är osäkert om du inte ber om det explicit.</p></li>
@@ -104,7 +104,7 @@
 
 <p class="text">Notera att ingen av frågorna kräver att du kan ämnet bättre än den vars arbete du granskar. Det handlar snarare om ett kritiskt förhållningssätt kring hur resultatet och slutsatsen har kommit till, inte om du själv vet svaret. Den första frågan kräver förvisso att du har en förväntan, men de tre andra fungerar även när du frågar AI om något du inte kan själv.</p>
 
-<p class="text">Det finns dock en viktig skillnad. Med en kollega kan du ställa kontrollfrågorna direkt och få ett svar. Det kan du förvisso med AI också, men svaret du får är baserat på sannolikhet. När du ber AI-modellen motivera sitt svar skriver den motiveringen i efterhand, och den kan låta helt rimlig utan att vara det som faktiskt låg bakom svaret. Det kan alltså vara en efterkonstruktion. Till exempel har Anthropic, företaget som utvecklar AI-tjänsten Claude, visat att en av deras modeller ibland gör en sak men säger en annan. Till exempel om man frågar hur den räknar ut 36 + 59 beskriver den skolmetoden med minnessiffror, samtidigt som modellen gör på ett helt annat sätt (Källa: <a href="https://www.anthropic.com/research/tracing-thoughts-language-model" rel="noopener">https://www.anthropic.com/research/tracing-thoughts-language-model</a>).</p>
+<p class="text">Det finns dock en viktig skillnad. Med en kollega kan du ställa kontrollfrågorna direkt och få ett svar. Det kan du förvisso med AI också, men svaret du får är baserat på sannolikhet. När du ber AI-modellen motivera sitt svar skriver den motiveringen i efterhand, och den kan låta helt rimlig utan att vara det som faktiskt låg bakom svaret. Det kan alltså vara en efterkonstruktion. Till exempel har Anthropic, företaget som utvecklar AI-tjänsten Claude, visat att en av deras modeller ibland gör en sak men säger en annan. Till exempel om man frågar hur den räknar ut 36 + 59 beskriver den skolmetoden med minnessiffror, samtidigt som modellen gör på ett helt annat sätt (Källa: <a href="https://www.anthropic.com/research/tracing-thoughts-language-model" rel="noopener">Anthropic</a>).</p>
 
 <p class="text">På grund av detta räcker det sällan med att be om en generell motivering för slutsatsen eller arbetet som helhet. Istället behöver vi be AI-modellen bryta ned sitt resonemang i de resultat, antaganden och villkor den utgått ifrån. Först då går det att kontrollera varje länk i kedjan själv, och avgöra om du håller med i resonemanget. Oavsett hur modellen säger att den tänkte. Ett sätt att göra detta är genom en enkel granskningsprompt:</p>
 
@@ -173,9 +173,9 @@
 </div>
 
 <div class="container blog main">
-<nav aria-label="Artikelnavigering" class="article-nav">
-<a class="article-nav-link article-nav-prev" href="/artiklar/nar-ai-svaren-blir-samre/">← Föregående: När AI-svaren plötsligt blir sämre — kolla vilken modell som svarar</a>
-<a class="article-nav-link article-nav-next" href="/artiklar/nar-ai-sammanfattar-en-rapport/">Nästa: Kolla alltid var siffrorna kommer ifrån →</a>
+<nav aria-label="Artikelnavigering" class="article-nav article-nav-bottom">
+<a class="article-nav-link article-nav-prev" href="/artiklar/nar-ai-svaren-blir-samre/"><span class="article-nav-dir">← Föregående</span><span class="article-nav-title">När AI-svaren plötsligt blir sämre — kolla vilken modell som svarar</span></a>
+<a class="article-nav-link article-nav-next" href="/artiklar/nar-ai-sammanfattar-en-rapport/"><span class="article-nav-dir">Nästa →</span><span class="article-nav-title">Kolla alltid var siffrorna kommer ifrån</span></a>
 </nav>
 </div>
 
