@@ -395,6 +395,12 @@ article figure.intro-figure img {
   height: auto;
 }
 
+/* Ingen övre marginal ovanför inledningsbilden: luften upp till TL;DR-raden
+   kommer bara från rubrikblockets egen padding. */
+article div.container.blog.main.gray:has(> figure.intro-figure) {
+  margin-top: 0;
+}
+
 /* Efter panelen ska bildens luft inte dubbleras av mallens .first-marginal. */
 article div.container.blog.main.gray:has(> figure.intro-figure) + div.container.blog.main.first {
   margin-top: 0;
@@ -407,13 +413,12 @@ article div.container.blog.main.gray:has(> figure.intro-figure) + div.container.
 article div.container.blog.main.film-row-wrap {
   padding-top: 0;
   padding-bottom: 0;
-  margin-top: 2rem;
+  margin-top: 0;  /* luften över kommer från rubrikblockets padding */
   margin-bottom: 2rem;
 }
 
 @media screen and (min-width: 700px) {
   article div.container.blog.main.film-row-wrap {
-    margin-top: 3rem;
     margin-bottom: 3rem;
   }
 }
