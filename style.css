@@ -344,11 +344,14 @@ body.nav-nyhetsbrev nav ul a[href="/nyhetsbrev/"] {
 /* Löptext och figur ligger för tätt i mallen: avståndet bestod av
    vh-baserade paddingar som varierar med fönsterhöjden (0.5-2vh i
    behållarna, 1.5vh i p.text, 1vh i bildtexten). Här är det fast:
-   2rem från löptexten till bildens överkant och 2rem från bildtextens
-   sista rad till nästa text. Den tonade panelen behåller en liten fast
-   innermarginal. Avgränsat till <article> - bara artikelsidorna har
-   figurpaneler. Avståndet mellan bild och bildtext, och mellan bilder i
-   samma figur, rörs inte (det är img/p.caption:s egen padding). */
+   2rem under 700 px och 3rem från 700 px, från löptextens sista rad till
+   bildens överkant och från bildtextens sista rad till nästa text.
+   Panelen (div.container.blog.main.gray, används bara runt <figure>)
+   har en fast innermarginal på 0.5rem; resten av avståndet ligger i
+   panelens marginal (1.5rem / 2.5rem). Avgränsat till <article> - bara
+   artikelsidorna har figurpaneler. Avståndet mellan bild och bildtext,
+   och mellan bilder i samma figur, rörs inte (det är img/p.caption:s
+   egen padding). */
 
 article div.container.blog.main.gray:has(> figure) {
   padding-top: 0.5rem;
@@ -357,7 +360,14 @@ article div.container.blog.main.gray:has(> figure) {
   margin-bottom: 1.5rem;
 }
 
-/* Nollar mallens vh-padding närmast panelen, så att bara de 2rem gäller. */
+@media screen and (min-width: 700px) {
+  article div.container.blog.main.gray:has(> figure) {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* Nollar mallens vh-padding närmast panelen, så att bara det fasta avståndet gäller. */
 article div.container.blog.main:has(+ div.container.blog.main.gray > figure) {
   padding-bottom: 0;
 }
