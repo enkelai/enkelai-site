@@ -228,6 +228,7 @@ div.container.blog .byline p.text {
    404 och /integritet/ saknar klass: inget menyval motsvarar dem. */
 
 body.nav-hem nav ul a[href="/"],
+body.nav-kom-igang nav ul a[href="/kom-igang/"],
 body.nav-artiklar nav ul a[href="/artiklar/"],
 body.nav-organisationer nav ul a[href="/for-organisationer/"],
 body.nav-nyhetsbrev nav ul a[href="/nyhetsbrev/"] {
