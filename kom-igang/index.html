@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Det enda du behöver veta för att komma igång med AI, resten kan du strunta i | enkelAI</title>
+<meta name="description" content="De koncept och ord du behöver förstå för att enkelt komma igång med AI. Två enkla test med instruktioner för dig som aldrig provat AI och inte vet var du ska börja.">
+<link rel="canonical" href="https://enkelai.net/kom-igang/">
+<meta property="og:title" content="Det enda du behöver veta för att komma igång med AI, resten kan du strunta i">
+<meta property="og:description" content="De koncept och ord du behöver förstå för att enkelt komma igång med AI. Två enkla test med instruktioner för dig som aldrig provat AI och inte vet var du ska börja.">
+<meta property="og:url" content="https://enkelai.net/kom-igang/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:image" content="https://enkelai.net/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="enkelAI — AI i arbetslivet. Konkret, på svenska, utan hype.">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512.png">
+<link rel="apple-touch-icon" href="/images/favicon-512.png">
+<meta name="theme-color" content="#024A61">
+<link rel="stylesheet" href="/assets/stylesheets/main_free.css">
+<link rel="stylesheet" href="/style.css">
+<style>
+/* Sidspecifik stil för promptblocken, samma mönster som artikel 2, 3, 5 och 6.
+   Läggs bara här, inte i delade stilmallar (style.css / main_free.css). */
+.prompt-block {
+  margin: 1.5vh 0;
+  padding: 1.2em 1.4em;
+  border: 1px solid var(--petrol-light);
+  border-left: 4px solid var(--petrol);
+  border-radius: 6px;
+  background-color: var(--tint);
+}
+.prompt-block .prompt-block-text {
+  margin: 0 0 0.8em 0;
+  padding: 0;
+  font-family: "Charter", sans-serif;
+  color: var(--ink);
+}
+.prompt-block .prompt-block-text:last-child {
+  margin-bottom: 0;
+}
+</style>
+</head>
+<body class="nav-kom-igang">
+<header>
+<div class="container">
+<nav>
+<a class="wordmark" href="/">enkelAI</a>
+<ul>
+<li><a href="/">Hem</a></li>
+<li><a href="/kom-igang/">Kom igång</a></li>
+<li><a href="/artiklar/">Artiklar</a></li>
+<li><a href="/for-organisationer/">För organisationer</a></li>
+<li><a href="/nyhetsbrev/">Nyhetsbrev</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="container blog" id="first-content">
+    <div class="blog-title no-cover">
+        <div class="blog-intro">
+            <div>
+                <h1 class="title">Det enda du behöver veta för att komma igång med AI, resten kan du strunta i</h1>
+                <p class="abstract"><em>TL;DR: De koncept och ord du behöver förstå för att enkelt komma igång med AI. Två enkla test med instruktioner för dig som aldrig provat AI och inte vet var du ska börja.</em></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<article>
+
+<div class="container blog main first">
+<p class="text">Många upplever att AI bara är något man ska kunna. Förstår du inte, betyder det nog bara att du inte riktigt “hänger med”. Andra kanske testar AI på jobbet, får svar som ibland är bra och ibland ganska intetsägande, och går tillbaka till att arbeta som vanligt. Det är en rimlig reaktion.</p>
+
+<p class="text">Problemet är sällan att man inte hänger med eller gjort fel. Det är att ingen har visat vad som faktiskt gör skillnad. Det gör vi här.</p>
+
+<p class="text">Den här sidan går igenom det lilla du behöver veta för att komma igång, och vad du kan strunta i så länge. Du behöver inte ha testat något AI-verktyg innan du läser.</p>
+</div>
+
+<div class="container blog main">
+<h2>Så ser en AI ut</h2>
+
+<p class="text">Verktygen ser lite olika ut, men det finns några saker som är gemensamma (se Figur 1):</p>
+
+<ul>
+<li><p class="text"><strong>Textfältet.</strong> Här skriver du din prompt och skickar den.</p></li>
+<li><p class="text"><strong>Ny chatt.</strong> En knapp som startar ett nytt samtal. Varje chatt är ett eget samtal.</p></li>
+<li><p class="text"><strong>Chatthistoriken.</strong> Ofta till vänster. Här sparas dina gamla chattar, så att du kan gå tillbaka till dem.</p></li>
+<li><p class="text"><strong>Modellväljaren.</strong> En liten meny som visar vilken modell som svarar. Du behöver inte ändra något där i början. Alla verktyg visar den inte.</p></li>
+</ul>
+
+<p class="text">Runt omkring finns knappar och menyer för sådant som agenter, bibliotek och schemaläggning. Inget av det behöver du för att komma igång. För vissa AI-tjänster ligger modellväljaren högst upp i chattfönstret.</p>
+</div>
+
+<div class="container blog main gray">
+<figure id="figur-1">
+<img src="/images/kom-igang-figur-1-760.svg" alt="Schematisk bild av ett chattfönster: knappen Ny chatt, en utgråad lista med agenter, bibliotek och schemaläggning, chatthistoriken, textfältet och modellväljaren." loading="lazy">
+<p class="caption">Figur 1. En förenklad skiss över hur ett AI-verktyg brukar se ut i webbläsaren. Utseendet skiljer sig mellan tjänsterna, men delarna känns igen.</p>
+</figure>
+</div>
+
+<div class="container blog main">
+<h2>Det här händer när du skriver</h2>
+
+<p class="text">När du öppnar ett AI-verktyg, exempelvis ChatGPT, Claude, Copilot Chat eller Gemini, möts du av ett tomt textfält. Du kan även trycka på knappen “Ny chat” för att komma hit. Här skriver du det du vill ha hjälp med, med vanliga ord, ungefär som i ett mejl till en kollega eller i en teams-chat.</p>
+
+<p class="text">Det du skriver (oavsett vad det nu kan vara) kallas för en <strong>prompt</strong>. En <strong>prompt</strong> är alltså en instruktion eller en fråga till en AI-modell. Du har kanske hört om programmerare som skriver i olika språk, exempelvis Python eller C++. Rent konceptuellt betyder det att en människa har lärt sig datorns språk för att kunna kommunicera med den. Med AI gäller det omvända: nu har datorn istället lärt sig att tolka människans språk. Och genom att skriva promptar kan vi få AI-modellen till att hjälpa oss med digitala uppgifter.</p>
+
+<p class="text">Det är lätt att tro att en AI-modell letar upp svaret på din prompt via internet någonstans, som en sökmotor. Så är det inte. En AI-modell är baserad på sannolikhet; svaret genereras, ord för ord, utifrån vilka ord som brukar hänga samman med det du skrev. Den slår alltså inte upp svaret; den skriver det från scratch.</p>
+
+<p class="text">Den här principen förklarar två saker som annars brukar ställa till lite förvirring när man är ny som AI-användare:</p>
+
+<ol>
+<li><p class="text">AI-modellen låter ofta lika säker när den har rätt, som när den har fel.</p></li>
+<li><p class="text">Samma fråga kan ge lite olika svar vid olika tillfällen.</p></li>
+</ol>
+
+<p class="text">Med det sagt, kan flera av verktygen självklart också söka på webben. Då syns det oftast i svaret, exempelvis som länkar till källor. Men även då är det modellen som skriver svaret, utifrån det den hittade. Läs mer om dessa perspektiv i artikeln <a href="/artiklar/ai-ar-ingen-sokmotor/">AI är ingen sökmotor</a>, eller <a href="https://youtu.be/I5r8NX6OvAU" rel="noopener">se den som film</a>.</p>
+</div>
+
+<div class="container blog main">
+<h2>De vanligaste orden du kommer att stöta på</h2>
+
+<p class="text">Utvecklingen av AI har medfört att en hel del nya ord har tillkommit. För att det ska bli enkelt att förstå vad alla pratar om listar jag här de absolut vanligaste orden (alltså en typ av miniminivå som krävs för förståelse) och hur du kan förstå dem. Notera att det självklart finns fler ord än dessa.</p>
+
+<p class="text"><strong>Prompt.</strong> Det du skriver till AI:n: en fråga, en instruktion eller en längre beskrivning av vad du vill ha hjälp med. Det finns otaliga guider och instruktionsfilmer på internet om hur du ska/bör/kan skriva promptar för att få AI-modellen att hjälpa dig. Mina egna tips på hur du kan skriva bättre promptar kan du läsa om i <a href="/artiklar/lat-ai-stalla-fragorna/">Låt AI ställa frågorna</a>.</p>
+
+<p class="text"><strong>Leverantör, AI-tjänst och modell.</strong> Det här är tre nivåer som ofta blandas ihop, vilket kan leda till förvirring:</p>
+
+<ul>
+<li><p class="text"><strong>Leverantör:</strong> det övergripande företaget, exempelvis Google, Anthropic eller OpenAI.</p></li>
+<li><p class="text"><strong>AI-tjänst:</strong> namnet på den AI som företaget levererar, alltså det du öppnar i webbläsaren eller installerar på din telefon. Den mest kända AI-tjänsten är ChatGPT.</p></li>
+<li><p class="text"><strong>Modell:</strong> namnen på de specifika modellerna som genererar svaren. Olika modeller är olika starka. Du kan likna dem vid programmet som körs på en dator, fast modellen körs på en stor server.</p></li>
+</ul>
+</div>
+
+<div class="container blog main gray">
+<figure id="figur-2">
+<img src="/images/kom-igang-figur-2-760.svg" alt="Tre nivåer för fyra leverantörer: Google med tjänsten Gemini och modellerna Pro och Flash, Anthropic med Claude och modellerna Fable och Opus, OpenAI med ChatGPT och modellerna Astra och Sol, och Microsoft med Copilot Chat som använder andras modeller." loading="lazy">
+<p class="caption">Figur 2. Tre nivåer som ofta blandas ihop: leverantören, AI-tjänsten du öppnar och modellerna som genererar svaren. Modellnamnen är exempel från oktober 2026.</p>
+</figure>
+</div>
+
+<div class="container blog main">
+<p class="text">Notera att vissa AI-tjänster inte alltid har egna modeller, utan tillhandahåller ett sätt att interagera med andras. Copilot Chat brukar exempelvis säga att den väljer modell automatiskt beroende på prompten du skriver, men underliggande modeller går att se om du trycker på knappen. I mitt fall är det OpenAIs modell GPT 5.6 SOL som används, se Figur 3. Läs vidare i <a href="/artiklar/nar-ai-svaren-blir-samre/">När AI-svaren plötsligt blir sämre</a> för att förstå hur modellvalet påverkar AI-svaret.</p>
+</div>
+
+<div class="container blog main gray">
+<figure id="figur-3">
+<img src="/images/kom-igang-figur-3-1003.png" alt="Skärmdump av modellväljaren i Copilot Chat med menyn öppen: lägena Automatiskt, Snabbsvar och Djupgående reflektion, och under GPT från OpenAI modellerna GPT 5.6 Sol Snabbsvar, GPT 5.6 Sol Djupgående reflektion och GPT 6.0 Sol." loading="lazy">
+<p class="caption">Figur 3. De valbara modellerna som fanns i min Copilot Chat, oktober 2026. Dina egna modeller kan vara andra beroende på vad din arbetsplats betalar för.</p>
+</figure>
+</div>
+
+<div class="container blog main">
+<p class="text"><strong>Tokens.</strong> Detta är valutan i AI-världen, alltså kostnaden att bearbeta den data som krävs för att besvara din prompt. Alla AI-tjänster ger dig som användare ett tak för hur många tokens du får använda under en viss tid. Gratisversioner ger få tokens, betalversioner ger fler. Olika modeller kräver dessutom olika mycket tokens. Se det som att fråga en konsult: svaret blir ofta bättre om du frågar en senior konsult (motsvarar en avancerad modell), men timpriset (tokens) är betydligt högre än om du frågar en junior. Beroende på vad du behöver hjälp med räcker det ibland med en enkel modell, men ibland kan en enklare modell leda till missförstånd och merarbete. När förbrukningstaket på tokens är nått kan tjänsten byta till en enklare modell eller be dig vänta, läs mer om detta i <a href="/artiklar/nar-ai-svaren-blir-samre/">När AI-svaren plötsligt blir sämre</a>. Begränsningar i tokens är också ett av skälen till att en lång chatt kan tappa det ni sa i början; läs mer i <a href="/artiklar/darfor-verkar-ai-glomma/">Därför verkar AI glömma det ni redan pratat om</a>.</p>
+
+<p class="text"><strong>Agent</strong> <em>(även kallad Gems eller Projekt)</em>. Istället för att skriva samma prompt om och om igen kan du skapa fasta instruktioner för en chatt om vad som gäller. Att sätta upp dessa regler och ramverk för en chat kallas för att skapa en agent; dvs. “när jag pratar med dig via den här agenten ska du köra den här prompten, använda de här perspektiven och underlagen och göra de här sakerna”. Det är alltså ett sätt att automatisera och sy ihop en fördefinierad arbetsprocess inom en avgränsad ram. Ordet används också om AI som utför flera steg på egen hand, exempelvis söker, öppnar filer och sammanställer ett resultat. Olika leverantörer kallar agenter för olika saker. I Gemini kallas de för “Gems”, i Claude och ChatGPT kallas de för “Projekt”, och i Copilot Chat kallas de för Agenter. När du börjar behöver du inga agenter, men det är bra att känna till.</p>
+</div>
+
+<div class="container blog main">
+<h2>Testa själv</h2>
+
+<p class="text">Du är nu redo att börja utforska vad du kan använda AI till. Med det sagt, klistra aldrig in känsligt material från jobbet i ett privat konto. Använd det verktyg din arbetsgivare har godkänt när det gäller jobbets dokument.</p>
+
+<p class="text">Vet du inte hur du ska komma igång rent praktiskt kan du göra två enkla test. Följ stegen nedan:</p>
+
+<p class="text"><strong>Test 1: ställ en första fråga</strong></p>
+
+<ol>
+<li><p class="text">Öppna ett av de vanligaste AI-verktygen i din webbläsare. Det spelar ingen roll vilken du väljer. Här är de vanligaste (i Sverige 2026):</p>
+<ul>
+<li><p class="text"><a href="https://chatgpt.com/" rel="noopener">ChatGPT</a> — chatgpt.com</p></li>
+<li><p class="text"><a href="https://claude.ai/" rel="noopener">Claude</a> — claude.ai</p></li>
+<li><p class="text"><a href="https://copilot.microsoft.com/" rel="noopener">Copilot</a> — copilot.microsoft.com</p></li>
+<li><p class="text"><a href="https://gemini.google.com/app" rel="noopener">Gemini</a> — gemini.google.com</p></li>
+<li><p class="text"><a href="https://sveagpt.se/logga-in" rel="noopener">SveaGPT</a> — via din arbetsgivare (går inte att skaffa privat)</p></li>
+</ul>
+<p class="text">Du kan behöva skapa ett konto, även för gratisversionen.</p></li>
+<li><p class="text">Klistra in den här prompten i textfältet och klicka på skicka:</p>
+<div class="prompt-block">
+<p class="prompt-block-text">vad är viktigt att tänka på när man är ny på jobbet?</p>
+</div></li>
+<li><p class="text">Läs svaret. Skicka sedan en följdfråga i samma chatt och se vad som händer.</p></li>
+<li><p class="text">Vill du arbeta vidare med exemplet rekommenderar jag att du läser <a href="/artiklar/ai-ar-ingen-sokmotor/">AI är ingen sökmotor</a>, där samma fråga ställs med mer kontext och som dialog.</p></li>
+</ol>
+
+<p class="text"><strong>Test 2: låt AI:n söka på webben, och kontrollera själv</strong></p>
+
+<ol>
+<li><p class="text">Öppna en ny chatt och klistra in:</p>
+<div class="prompt-block">
+<p class="prompt-block-text">Gå in på enkelai.net och leta upp vad som står där om hur man granskar en AI:s arbete. Sammanfatta det i tre punkter och säg vilken sida du hittade det på.</p>
+</div></li>
+<li><p class="text">Öppna sedan själv artikeln <a href="/artiklar/granska-ai-som-en-kollegas-arbete/">Granska AI-modellens svar som om det vore din kollegas arbete</a>.</p></li>
+<li><p class="text">Kontrollera att det AI:n skrev stämmer med det som står i artikeln.</p></li>
+</ol>
+</div>
+
+<div class="container blog main">
+<h2>Vill du lära dig mer?</h2>
+
+<p class="text">Förhoppningsvis kan dessa två test få dig att komma igång att arbeta mer med AI. Vill du veta mer, har du frågor eller invändningar? Mejla mig gärna. Skriv också upp dig på nyhetsbrevet nedan, då får du ett mejl när jag publicerar en ny artikel om AI i arbetslivet. Inget annat, ingen reklam.</p>
+
+<p class="text">Lycka till!</p>
+</div>
+
+</article>
+
+<div class="container blog main">
+<p class="text"><a href="/for-organisationer/">För organisationer</a></p>
+<p class="text"><a href="mailto:erik@enkelai.net">erik@enkelai.net</a></p>
+</div>
+
+<div class="container blog main">
+<h2>Nya artiklar direkt i inkorgen</h2>
+<p class="text">Jag skickar ett mejl när jag publicerar en ny artikel om AI i arbetslivet. Inget annat, ingen reklam.</p>
+
+<form class="newsletter-form" method="POST" action="https://c1894ea2.sibforms.com/v2/serve/MUIFAGZoIHXhNKqsJBTTOz7udWKTIJgBbd2zYsJN2guOXLlIvyFusT9XPiFs08dojuQsaE7mum7J4Nirzxye4t0_X0frl7nH0iMC5zg0SnDr_ff1WjKQtMm6BL-4nfEwhowXjivtlizvQusM98EuoeN_anDALyAy2-qzWCQ8vuXVg-tpWAsZLKsHt3qDzopOOTRiM1xzSuQ9c19lVQ==">
+<label for="EMAIL">Din e-postadress</label>
+<input type="email" id="EMAIL" name="EMAIL" required placeholder="din@epost.se" autocomplete="email">
+<label class="checkbox-label">
+<input type="checkbox" name="OPT_IN" value="1" required>
+<span>Ja, skicka mig ett mejl när nya artiklar publiceras. Jag har läst <a href="/integritet/">integritetspolicyn</a>.</span>
+</label>
+<input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off">
+<input type="hidden" name="locale" value="sv">
+<button type="submit">Prenumerera</button>
+</form>
+</div>
+
+<footer>
+<div class="container">
+<p>© 2026 Erik Klint</p>
+<p><a href="mailto:erik@enkelai.net">erik@enkelai.net</a></p>
+<p><a href="/nyhetsbrev/">Få nya artiklar via mejl</a></p>
+<p><a href="/integritet/">Integritet</a></p>
+<p>Byggd med <a href="https://shikun.io/projects/clarity">Clarity Template</a>.</p>
+</div>
+</footer>
+</body>
+</html>
