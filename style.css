@@ -396,6 +396,14 @@ article figure.intro-figure img {
   height: auto;
 }
 
+/* Inledningsbilderna på 1264 px (artikel 2, 4 och 5) förstoras inte heller
+   över sin egen bredd. Reglerna ovan räcker inte för dem: de tillåter upp
+   till 2400 px, och textkolumnen kan på mycket breda skärmar (ca 5000 px
+   och uppåt) bli bredare än 1264 px. */
+article figure.intro-figure img[width="1264"] {
+  max-width: 1264px;
+}
+
 /* Ingen övre marginal ovanför inledningsbilden: luften upp till TL;DR-raden
    kommer bara från rubrikblockets egen padding. */
 article div.container.blog.main.gray:has(> figure.intro-figure) {
